@@ -1,0 +1,1132 @@
+<!doctype html>
+<html lang="en" data-theme="t1" data-mode="auto">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="ICECE 2026 — 14th International Conference on Electrical and Computer Engineering (BUET)." />
+  <title>ICECE 2026 — 14th International Conference on Electrical and Computer Engineering</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- Locked banner -->
+  <header class="site-header" id="top">
+    <div class="container header-inner">
+      <a class="brand" href="#home" aria-label="ICECE 2026 home">
+        
+        
+
+        <span class="brand-text">
+          <span class="brand-title-row">
+            <span class="brand-title">ICECE 2026</span>
+            <span class="brand-date">December 10 – 12, 2026</span>
+          </span>
+          <span class="brand-location">BUET · Dhaka · Bangladesh</span>
+        </span>
+      </a>
+
+      <nav class="nav" aria-label="Primary">
+        <button class="nav-toggle" type="button" aria-label="Toggle menu" aria-expanded="false" aria-controls="navLinks">
+          <span aria-hidden="true">☰</span>
+        </button>
+
+        <!-- Nav links are generated from sections that exist in the page.
+             If you comment out an entire section, it will not appear in the nav. -->
+        <div class="nav-links" id="navLinks"></div>
+
+        <noscript>
+          <div class="nav-links">
+            <a href="#about">About</a>
+            <a href="#cfp">CFP</a>
+            <a href="#tracks">Tracks</a>
+            <a href="#dates">Dates</a>
+            <a href="#program">Program</a>
+            <a href="#venue">Venue</a>
+            <a href="#register">Register</a>
+            <a href="#sponsors">Sponsors</a>
+            <a href="#committee">Committee</a>
+            <a href="#faq">FAQ</a>
+          </div>
+        </noscript>
+      </nav>
+
+      <div class="header-actions">
+        <!-- <button class="mode-toggle" type="button" data-mode-toggle aria-label="Change color theme">
+          <span class="mode-icon" aria-hidden="true">🟦</span>
+          <span class="mode-label">Cyan</span>
+        </button> -->
+        
+    <button
+      class="announcement-reopen"
+      type="button"
+      id="announcementReopen"
+      aria-label="Show announcements"
+      aria-controls="announcementBar"
+      aria-expanded="false"
+      title="Show announcements"
+      hidden
+    >
+      <span class="announcement-reopen-icon" aria-hidden="true">📰</span>
+    </button>
+    
+        <a class="btn btn-primary btn-compact" href="#submit">Submit</a>
+      </div>
+    </div>
+
+    <div class="scroll-progress" aria-hidden="true"><span></span></div>
+
+    <div class="announcement-bar" id="announcementBar" hidden aria-live="polite" aria-atomic="true">
+      <div class="container announcement-inner">
+        <span class="announcement-label">Notice</span>
+        <div class="announcement-viewport">
+          <div class="announcement-track" id="announcementTrack">
+            <span class="announcement-text" id="announcementText"></span>
+          </div>
+        </div>
+        <button class="announcement-close" type="button" id="announcementClose" aria-label="Dismiss announcement">×</button>
+      </div>
+    </div>
+
+  </header>
+
+  <main id="main">
+    <!-- Hero -->
+    <section class="hero" id="home" aria-label="Conference overview">
+      <div class="hero-bg" aria-hidden="true"></div>
+
+      <div class="container hero-inner">
+        <div class="hero-copy reveal">
+          <p class="kicker">14th International Conference on Electrical and Computer Engineering</p>
+          <h1>ICECE 2026</h1>
+          <p class="lead">
+            A premier international forum for researchers, practitioners, and industry leaders in Electrical &amp; Computer Engineering.
+          </p>
+
+          <div class="hero-meta">
+            <div class="meta-pill">
+              <span class="meta-label">Dates</span>
+              <span class="meta-value">December 10–12, 2026</span>
+            </div>
+            <div class="meta-pill">
+              <span class="meta-label">Location</span>
+              <span class="meta-value">BUET, Dhaka, Bangladesh</span>
+            </div>
+          </div>
+
+          <div class="cta-row">
+            <a class="btn btn-primary" href="#submit">Submit Paper</a>
+            <a class="btn btn-ghost" href="#register">Register</a>
+            <a class="btn btn-link" href="#cfp">View Call for Papers →</a>
+          </div>
+        </div>
+
+        <div class="hero-card reveal">
+          <div class="card">
+            <h2 class="card-title">Quick Links</h2>
+            <ul class="link-list">
+              <li><a href="#dates">Important Dates</a></li>
+              <li><a href="#program">Program at a glance</a></li>
+              <li><a href="#venue">Venue &amp; Travel</a></li>
+              <li><a href="#register">Registration</a></li>
+            </ul>
+
+            <hr class="sep" />
+
+            <!-- Right-side logos (below important links) -->
+            <div class="side-badges">
+              <div class="side-badge">
+                <div class="side-badge-label">Organized by</div>
+                <div class="side-badge-body">
+                  <img class="side-logo" src="assets/buet_eee_full_logo.svg" alt="BUET Department of EEE logo">
+                </div>
+              </div>
+
+              <div class="side-badge">
+                <div class="side-badge-label">Technical Cosponsored by</div>
+                <div class="side-badge-body">
+                  <img class="side-logo" src="assets/IEEEBDSLB.png" alt="IEEE Bangladesh Section logo">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section class="section" id="about" data-nav="About" aria-label="About ICECE">
+      <div class="container">
+        <div class="section-head reveal">
+          <h2>About ICECE</h2>
+          <p>
+            ICECE is an international conference hosted at Bangladesh University of Engineering and Technology (BUET),
+            bringing together cutting-edge research across electrical, electronic, and computer engineering. The conference
+            features keynote talks, peer-reviewed technical sessions, poster presentations, and industry engagement.
+          </p>
+        </div>
+
+        <div class="grid-3">
+          <article class="card reveal">
+            <h3>Scope</h3>
+            <p>
+              Covers theory, design, implementation, and real-world deployment across major ECE domains, with a focus on
+              research impact and practical relevance.
+            </p>
+          </article>
+
+          <article class="card reveal">
+            <h3>Research Community</h3>
+            <p>
+              A platform for postgraduate students, early-career researchers, and senior experts to connect through
+              sessions, Q&amp;A, and networking opportunities.
+            </p>
+          </article>
+
+          <article class="card reveal">
+            <h3>Industry &amp; Innovation</h3>
+            <p>
+              Bridges academia and industry through invited talks, panels, and demonstrations, supporting technology
+              transfer and collaboration.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+<!-- Call for Papers -->
+<section class="section alt" id="cfp" data-nav="CFP" aria-label="Call for papers">
+  <div class="container">
+    <div class="section-head reveal">
+      <h2>Call for Papers</h2>
+      <p>
+        ICECE 2026 invites original, unpublished research contributions in Electrical and Computer Engineering.
+        Submissions will undergo peer review and accepted papers will be scheduled for presentation during the conference.
+      </p>
+    </div>
+
+    <div class="callout reveal" style="margin-top: 0;">
+      <div>
+        <h3>Download the Call for Papers</h3>
+        <p class="muted">Get the full Call for Papers document including topics, formatting, and submission guidelines.</p>
+      </div>
+      <div class="callout-actions">
+        <a class="btn btn-primary" href="call-for-papers.pdf" target="_blank" rel="noreferrer noopener">
+          Click here to download the Call for Papers
+        </a>
+      </div>
+    </div>
+
+    <div class="chips reveal" role="list" aria-label="Topic areas" style="margin-top: 16px;">
+      <span class="chip" role="listitem">Signal Processing</span>
+      <span class="chip" role="listitem">Communications &amp; Networking</span>
+      <span class="chip" role="listitem">Power &amp; Energy Systems</span>
+      <span class="chip" role="listitem">Electronics &amp; Circuits</span>
+      <span class="chip" role="listitem">Embedded Systems</span>
+      <span class="chip" role="listitem">VLSI &amp; Hardware Design</span>
+      <span class="chip" role="listitem">AI/ML for ECE</span>
+      <span class="chip" role="listitem">Robotics &amp; Control</span>
+      <span class="chip" role="listitem">Photonics &amp; Optoelectronics</span>
+      <span class="chip" role="listitem">Biomedical Engineering</span>
+      <span class="chip" role="listitem">Cybersecurity</span>
+      <span class="chip" role="listitem">IoT &amp; Edge Computing</span>
+    </div>
+  </div>
+</section>
+
+<!-- Paper Submission -->
+<section class="section" id="submit" data-nav="Submit" aria-label="Paper submission">
+  <div class="container">
+    <div class="section-head reveal">
+      <h2>Paper Submission</h2>
+
+    </div>
+
+    <div class="callout reveal" style="margin-top: 0;">
+      <div>
+        <h3>Submission Portal</h3>
+        <p>
+          Manuscripts will be submitted through the official CMT submission system. Before submission, authors should ensure that the paper is formatted according to the IEEE conference template and complies with all submission guidelines.
+        </p>
+        <p class="muted">
+          Template:
+          <a href="https://www.ieee.org/conferences/publishing/templates" target="_blank" rel="noreferrer noopener">
+            IEEE Conference Paper Template
+          </a>
+        </p>
+      </div>
+      <div class="callout-actions">
+        <a class="btn btn-primary" href="https://cmt3.research.microsoft.com/" target="_blank" rel="noreferrer noopener">
+          Submit Now!
+        </a>
+        <a class="btn btn-ghost" href="#dates">Important dates</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Tracks / Topics -->
+<section class="section" id="tracks" data-nav="Tracks" aria-label="Tracks and topics">
+  <div class="container">
+    <div class="section-head reveal">
+      <h2>Conference Tracks</h2>
+      <p>
+        ICECE 2026 invites submissions across a broad range of Electrical and Computer Engineering research areas. Accepted papers will be organized into the following thematic tracks.
+      </p>
+    </div>
+
+    <div class="grid-2">
+
+      <article class="card reveal">
+        <h3>Track 1: Algorithms, Artificial Intelligence and Data Science</h3>
+        <ul class="bullets">
+          <li>Algorithms and Computation</li>
+          <li>Artificial Intelligence and Machine Learning</li>
+          <li>Cloud Computing &amp; Big Data</li>
+          <li>Biometrics</li>
+          <li>Software &amp; Database Systems</li>
+          <li>Data Mining and Data Analytics</li>
+          <li>Deep Learning and Reinforcement Learning</li>
+          <li>Explainable AI</li>
+        </ul>
+      </article>
+
+      <article class="card reveal">
+        <h3>Track 2: Computer Systems, Networks and Security</h3>
+        <ul class="bullets">
+          <li>Computer Architecture &amp; Systems</li>
+          <li>Computer Networks and Security</li>
+          <li>Embedded and Intelligent Systems &amp; IoT</li>
+          <li>Cyber-Physical Systems</li>
+          <li>Edge and Fog Computing</li>
+          <li>Distributed Systems</li>
+        </ul>
+      </article>
+
+      <article class="card reveal">
+        <h3>Track 3: Signal Processing, Computer Vision and Human–Computer Interaction</h3>
+        <ul class="bullets">
+          <li>Signal, Image &amp; Video Processing</li>
+          <li>Computer Vision, Graphics &amp; HCI</li>
+          <li>Multimedia Processing</li>
+          <li>Speech and Natural Language Processing</li>
+          <li>Augmented Reality (AR) and Virtual Reality (VR)</li>
+        </ul>
+      </article>
+
+      <article class="card reveal">
+        <h3>Track 4: Communication Systems and Networks</h3>
+        <ul class="bullets">
+          <li>Telecommunication Theory and Systems</li>
+          <li>Wireless Communication and Networks</li>
+          <li>Optical Communication and Networks</li>
+          <li>5G/6G Communication Systems</li>
+          <li>Satellite and Space Communications</li>
+          <li>Internet of Everything</li>
+        </ul>
+      </article>
+
+      <article class="card reveal">
+        <h3>Track 5: Electronic Devices, Materials and Photonics</h3>
+        <ul class="bullets">
+          <li>Electronic and Photonic Materials</li>
+          <li>Electronic Devices</li>
+          <li>Optoelectronic Devices</li>
+          <li>Nanophotonics and Plasmonics</li>
+          <li>Photonic Technologies &amp; Applications</li>
+          <li>Quantum Devices</li>
+        </ul>
+      </article>
+
+      <article class="card reveal">
+        <h3>Track 6: VLSI, Nanotechnology and Microsystems</h3>
+        <ul class="bullets">
+          <li>VLSI Circuits &amp; Systems</li>
+          <li>Nanotechnology and MEMS</li>
+          <li>Sensor Technologies and Applications</li>
+          <li>Analog and Mixed Signal Circuits</li>
+          <li>Integrated Microsystems</li>
+        </ul>
+      </article>
+
+      <article class="card reveal">
+        <h3>Track 7: Power, Energy and Smart Grid Technologies</h3>
+        <ul class="bullets">
+          <li>Electrical Machines &amp; Drives</li>
+          <li>Power Electronics</li>
+          <li>Power Systems</li>
+          <li>Smart Grids</li>
+          <li>Renewable Energy</li>
+          <li>Photovoltaic Systems</li>
+          <li>Energy Storage Systems</li>
+          <li>Electric Vehicles and Charging Infrastructure</li>
+        </ul>
+      </article>
+
+      <article class="card reveal">
+        <h3>Track 8: Robotics, Automation, Biomedical and Emerging Technologies</h3>
+        <ul class="bullets">
+          <li>Robotics, Control &amp; Automation</li>
+          <li>Biomedical Engineering &amp; Bioinformatics</li>
+          <li>Emerging Technologies</li>
+          <li>Engineering Education Focusing on 4IR</li>
+          <li>Autonomous Systems</li>
+          <li>Intelligent Healthcare Systems</li>
+        </ul>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- Speakers (optional section — if you comment this out, nav will auto-hide it) -->
+<section class="section alt" id="speakers" data-nav="Speakers" aria-label="Keynote and invited speakers">
+  <div class="container">
+    <div class="section-head reveal">
+      <h2>Keynote &amp; Invited Speakers</h2>
+      <p>ICECE 2026 will feature distinguished keynote and invited speakers from academia and industry.</p>
+    </div>
+
+    <div class="grid-3 speaker-grid">
+
+      <article class="card speaker-card reveal">
+        <div class="speaker-card__top">
+          <div class="speaker-card__badge">Keynote</div>
+          <img class="speaker-card__photo" src="assets/speakers/johndoe.jpg" alt="Prof. John Doe">
+        </div>
+        <div class="speaker-card__body">
+          <h3 class="speaker-card__name">Prof. John Doe</h3>
+          <p class="speaker-card__affiliation">Massachusetts Institute of Technology (MIT), USA</p>
+          <div class="speaker-card__talk">
+            <span class="speaker-card__talk-label">Talk</span>
+            <p class="speaker-card__talk-title">Artificial Intelligence for Next-Generation Cyber-Physical Systems</p>
+          </div>
+        </div>
+      </article>
+
+      <article class="card speaker-card reveal">
+        <div class="speaker-card__top">
+          <div class="speaker-card__badge">Invited</div>
+          <img class="speaker-card__photo" src="assets/speakers/johndoe.jpg" alt="Invited Speaker">
+        </div>
+        <div class="speaker-card__body">
+          <h3 class="speaker-card__name">Invited Speaker</h3>
+          <p class="speaker-card__affiliation">To be announced</p>
+          <div class="speaker-card__talk">
+            <span class="speaker-card__talk-label">Talk</span>
+            <p class="speaker-card__talk-title">To be announced</p>
+          </div>
+        </div>
+      </article>
+
+      <article class="card speaker-card reveal">
+        <div class="speaker-card__top">
+          <div class="speaker-card__badge">Plenary</div>
+          <img class="speaker-card__photo" src="assets/speakers/johndoe.jpg" alt="Plenary Speaker">
+        </div>
+        <div class="speaker-card__body">
+          <h3 class="speaker-card__name">Plenary Speaker</h3>
+          <p class="speaker-card__affiliation">To be announced</p>
+          <div class="speaker-card__talk">
+            <span class="speaker-card__talk-label">Talk</span>
+            <p class="speaker-card__talk-title">To be announced</p>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- Important Dates -->
+<section class="section" id="dates" data-nav="Dates" aria-label="Important dates">
+  <div class="container">
+    <div class="section-head reveal">
+      <h2>Important Dates</h2>
+      <p>
+        Authors are encouraged to submit their papers early. The following dates correspond to the ICECE 2026 submission and registration timeline.
+      </p>
+    </div>
+
+    <div class="timeline reveal" role="list">
+
+      <!-- Paper submission -->
+      <div class="t-item" role="listitem">
+        <span class="t-dot" aria-hidden="true"></span>
+        <div class="t-body">
+          <div class="t-top">
+            <strong>Paper submission deadline</strong>
+            <span class="muted">August 01, 2026</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- If deadline extension is needed, replace the above block with this:
+
+      <div class="t-item highlight" role="listitem">
+        <span class="t-dot" aria-hidden="true"></span>
+        <div class="t-body">
+          <div class="t-top">
+            <strong>Paper submission deadline</strong>
+            <span class="muted">
+              <s>August 01, 2026</s> &nbsp; August 15, 2026
+            </span>
+          </div>
+          <p class="muted">Extended submission deadline.</p>
+        </div>
+      </div>
+
+      -->
+
+      <!-- Notification -->
+      <div class="t-item" role="listitem">
+        <span class="t-dot" aria-hidden="true"></span>
+        <div class="t-body">
+          <div class="t-top">
+            <strong>Notification of acceptance</strong>
+            <span class="muted">November 01, 2026</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Camera ready -->
+      <div class="t-item" role="listitem">
+        <span class="t-dot" aria-hidden="true"></span>
+        <div class="t-body">
+          <div class="t-top">
+            <strong>Camera-ready submission</strong>
+            <span class="muted">November 10, 2026</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Registration -->
+      <div class="t-item" role="listitem">
+        <span class="t-dot" aria-hidden="true"></span>
+        <div class="t-body">
+          <div class="t-top">
+            <strong>Registration deadline</strong>
+            <span class="muted">November 10, 2026</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Conference -->
+      <div class="t-item highlight" role="listitem">
+        <span class="t-dot" aria-hidden="true"></span>
+        <div class="t-body">
+          <div class="t-top">
+            <strong>ICECE 2026</strong>
+            <span>December 10–12, 2026</span>
+          </div>
+          <p class="muted">Bangladesh University of Engineering and Technology (BUET), Dhaka.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+    <!-- Program / Schedule -->
+    <section class="section alt" id="program" data-nav="Program" aria-label="Program schedule">
+      <div class="container">
+        <div class="section-head reveal">
+          <h2>Program at a glance</h2>
+          <p>
+            ICECE 2026 will feature keynote talks, parallel technical sessions, poster presentations, and networking events.
+            The detailed program will be published closer to the conference.
+          </p>
+        </div>
+
+        <div class="tabs reveal" data-tabs>
+          <div class="tablist" role="tablist" aria-label="Schedule days">
+
+            <button class="tab" role="tab" aria-selected="true" aria-controls="day1" id="t-day1">
+              <span class="tab-day">Day 1</span>
+              <span class="tab-date">10 Dec · Thu</span>
+            </button>
+          
+            <button class="tab" role="tab" aria-selected="false" aria-controls="day2" id="t-day2">
+              <span class="tab-day">Day 2</span>
+              <span class="tab-date">11 Dec · Fri</span>
+            </button>
+          
+            <button class="tab" role="tab" aria-selected="false" aria-controls="day3" id="t-day3">
+              <span class="tab-day">Day 3</span>
+              <span class="tab-date">12 Dec · Sat</span>
+            </button>
+          
+          </div>
+
+          <div class="tabpanel" role="tabpanel" id="day1" aria-labelledby="t-day1">
+            <div class="agenda">
+              <div class="slot"><span class="time">09:00</span><span class="what">Registration &amp; Welcome</span></div>
+              <div class="slot"><span class="time">10:00</span><span class="what">Opening Ceremony</span></div>
+              <div class="slot"><span class="time">11:00</span><span class="what">Keynote Session</span></div>
+              <div class="slot"><span class="time">14:00</span><span class="what">Parallel Technical Sessions</span></div>
+              <div class="slot"><span class="time">17:30</span><span class="what">Poster Session &amp; Demos</span></div>
+            </div>
+          </div>
+
+          <div class="tabpanel" role="tabpanel" id="day2" aria-labelledby="t-day2" hidden>
+            <div class="agenda">
+              <div class="slot"><span class="time">09:30</span><span class="what">Invited Talk</span></div>
+              <div class="slot"><span class="time">10:30</span><span class="what">Parallel Technical Sessions</span></div>
+              <div class="slot"><span class="time">15:00</span><span class="what">Industry Panel</span></div>
+              <div class="slot"><span class="time">19:00</span><span class="what">Conference Dinner</span></div>
+            </div>
+          </div>
+
+          <div class="tabpanel" role="tabpanel" id="day3" aria-labelledby="t-day3" hidden>
+            <div class="agenda">
+              <div class="slot"><span class="time">09:30</span><span class="what">Plenary Talk</span></div>
+              <div class="slot"><span class="time">10:30</span><span class="what">Technical Sessions + Student Activities</span></div>
+              <div class="slot"><span class="time">14:30</span><span class="what">Awards &amp; Closing</span></div>
+              <div class="slot"><span class="time">16:00</span><span class="what">Campus Visit (optional)</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Venue -->
+    <section class="section" id="venue" data-nav="Venue" aria-label="Venue and travel">
+      <div class="container">
+        <div class="section-head reveal">
+          <h2>Venue &amp; Travel</h2>
+          <p>
+            ICECE 2026 will be hosted at Bangladesh University of Engineering and Technology (BUET), Dhaka. Dhaka is the
+            capital of Bangladesh and a major hub for academia, industry, and innovation.
+          </p>
+        </div>
+
+        <div class="grid-2">
+          <article class="card reveal">
+            <h3>Venue</h3>
+          
+            <p class="muted">
+              <strong>6th Floor, ECE Building</strong><br>
+              Department of Electrical and Computer Engineering<br>
+              Bangladesh University of Engineering and Technology (BUET)<br>
+              Palashi, Dhaka-1000, Bangladesh
+            </p>
+          
+            <ul class="bullets">
+              <li>Main technical sessions will be held on the <strong>6th floor of the ECE Building</strong></li>
+              <li>Registration and help desk will be available near the conference entrance</li>
+              <li>Directional signage will be provided across the BUET campus</li>
+            </ul>
+          
+            <a class="btn btn-ghost"
+               href="https://maps.google.com/?q=Department%20of%20Electrical%20and%20Computer%20Engineering%20BUET"
+               target="_blank"
+               rel="noreferrer noopener">
+              View on map
+            </a>
+          </article>
+                    <article class="card reveal">
+            <h3>Accommodation</h3>
+          
+            <ul class="bullets">
+              <li><strong>InterContinental Dhaka</strong> — Shahbag (≈1.5 km from BUET)</li>
+              <li><strong>Pan Pacific Sonargaon</strong> — Karwan Bazar (≈3 km from BUET)</li>
+              <li><strong>Hotel Sarina</strong> — Banani (≈7 km from BUET)</li>
+              <li><strong>Amari Dhaka</strong> — Gulshan (≈8 km from BUET)</li>
+              <li><strong>FARS Hotel & Resorts</strong> — Purana Paltan (≈3 km from BUET)</li>
+            </ul>
+          
+            <p class="muted">
+              The most convenient way to travel to the conference venue is by ride-sharing services such as <strong>Uber</strong> or Pathao.
+              Travel time from most recommended hotels ranges from <strong>10–30 minutes</strong> depending on traffic conditions.
+            </p>
+          </article>        </div>
+      </div>
+    </section>
+
+    <!-- Registration -->
+    <section class="section alt" id="register" data-nav="Register" aria-label="Registration">
+      <div class="container">
+        <div class="section-head reveal">
+          <h2>Registration</h2>
+          <p>
+            Registration information will be published on the official ICECE website.
+          </p>
+        </div>
+
+        <div class="grid-3">
+          <article class="card reveal">
+            <h3>Student</h3>
+            <p class="price">Fee: To be announced</p>
+            <ul class="bullets">
+              <li>Access to all sessions</li>
+              <li>Proceedings access</li>
+              <li>Student events</li>
+            </ul>
+          </article>
+
+          <article class="card reveal">
+            <h3>Regular</h3>
+            <p class="price">Fee: To be announced</p>
+            <ul class="bullets">
+              <li>All sessions + keynotes</li>
+              <li>Proceedings access</li>
+              <li>Networking events</li>
+            </ul>
+          </article>
+
+          <article class="card reveal">
+            <h3>IEEE Member</h3>
+            <p class="price">Fee: To be announced</p>
+            <ul class="bullets">
+              <li>Member rate (where applicable)</li>
+              <li>All sessions access</li>
+              <li>Proceedings access</li>
+            </ul>
+          </article>
+        </div>
+
+        <div class="callout reveal">
+          <div>
+            <h3>Registration portal</h3>
+            <p class="muted">Registration is not open yet.</p>
+          </div>
+          <div class="callout-actions">
+            <a class="btn btn-ghost" href="#contact">Registration questions</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sponsors -->
+    <section class="section" id="sponsors" data-nav="Sponsors" aria-label="Sponsors and partners">
+      <div class="container">
+        <div class="section-head reveal">
+          <h2>Sponsors &amp; Partners</h2>
+          <p>
+            ICECE welcomes sponsorships and partnerships that support the conference mission and strengthen engagement
+            between academia and industry.
+          </p>
+        </div>
+
+        <div class="sponsor-grid reveal" aria-label="Sponsor logos">
+          <div class="sponsor">Sponsor</div>
+          <div class="sponsor">Sponsor</div>
+          <div class="sponsor">Sponsor</div>
+          <div class="sponsor">Sponsor</div>
+          <div class="sponsor">Sponsor</div>
+          <div class="sponsor">Sponsor</div>
+        </div>
+
+        <div class="callout reveal">
+          <div>
+            <h3>Sponsorship inquiries</h3>
+            <p class="muted">
+              For sponsorship opportunities and packages, please contact the organizing committee.
+            </p>
+          </div>
+          <div class="callout-actions">
+            <a class="btn btn-primary" href="#contact">Contact for sponsorship</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+<!-- Committee -->
+<section class="section alt" id="committee" data-nav="Committee" aria-label="Conference committees">
+  <div class="container">
+    <div class="section-head reveal">
+      <h2>Conference Committees</h2>
+      <p>
+        ICECE 2026 is guided by its Technical Committee, Organizing Committee, and International Advisory Committee, ensuring a strong technical program and smooth conference operations.
+      </p>
+      <p class="committee-link">
+        <a href="pdf/committees.pdf" target="_blank" rel="noreferrer noopener">
+          View the complete list of committees
+        </a>
+      </p>
+    </div>
+
+    <div class="prevconf-grid committee-grid reveal">
+      <article class="prevconf-card committee-card">
+        <div class="prevconf-meta">
+          <span class="prevconf-tag">Organizing Committee</span>
+        </div>
+        <!--<h3>Organizing Committee</h3> -->
+        <ul class="committee-list">
+          <li><strong>Organizing Chair:</strong> Dr. Sharif Mohd. Mominuzzaman</li>
+          <li><strong>Organizing Secretary:</strong> Dr. Shaikh Asif Mahmood</li>
+          <li><strong>Treasurer:</strong> Dr. Mahbub Alam</li>
+        </ul>
+      </article>
+
+      <article class="prevconf-card committee-card">
+        <div class="prevconf-meta">
+          <span class="prevconf-tag">Technical Committee</span>
+        </div>
+        <!--<h3>Technical Committee</h3>-->
+        <ul class="committee-list">
+          <li><strong>Technical Chair:</strong> Dr. Shaikh Anowarul Fattah</li>
+          <li><strong>Technical Secretary:</strong> Dr. Md. Forkan Uddin</li>
+          <li><strong>Publication Chair:</strong> Dr. Apratim Roy</li>
+        </ul>
+      </article>
+    </div>
+
+    <article class="prevconf-card committee-card committee-card-wide reveal">
+      <div class="prevconf-meta">
+        <span class="prevconf-tag">International Advisory Committee</span>
+      </div>
+      
+
+      <div class="committee-columns">
+        <ul class="committee-list">
+          <li><strong>Athina Petropulu</strong> — FIEEE, Rutgers University, USA</li>
+          <li><strong>Bozenna Pasik Duncan</strong> — FIEEE, University of Kansas, USA</li>
+          <li><strong>Ashutosh Dutta</strong> — FIEEE, Johns Hopkins University, USA</li>
+          <li><strong>Gaurav Sharma</strong> — FIEEE, University of Rochester, USA</li>
+          <li><strong>Stefano Bregni</strong> — FIEEE, Politecnico di Milano, Italy</li>
+          <li><strong>Kalyan Sen</strong> — FIEEE, Sen Engineering Solutions, Inc, USA</li>
+          <li><strong>Bikash Pal</strong> — FIEEE, Imperial College London, UK</li>
+          <li><strong>Mohammad S. Alam</strong> — FIEEE, Minnesota State University, USA</li>
+          <li><strong>Ekram Hossain</strong> — FIEEE, University of Manitoba, Canada</li>
+          <li><strong>KVS Hari</strong> — FIEEE, Indian Institute of Science, India</li>
+          <li><strong>Mohammad Nasir Uddin</strong> — FIEEE, Lakehead University, Canada</li>
+        </ul>
+
+        <ul class="committee-list">
+          <li><strong>S K Pal</strong> — FIEEE, Indian Statistical Institute, India</li>
+          <li><strong>Sayeef Salahuddin</strong> — FIEEE, University of California Berkeley, USA</li>
+          <li><strong>S N Singh</strong> — FIEEE, ABV-IIITM, India</li>
+          <li><strong>Muhammad Mustafa Hussain</strong> — FIEEE, Purdue University, USA</li>
+          <li><strong>Nazmul Anwar</strong> — FIEEE, General Motors, USA</li>
+          <li><strong>Sushmita Mitra</strong> — FIEEE, Indian Statistical Institute, India</li>
+          <li><strong>Mohammad S. Islam</strong> — FIEEE, Halla Mechatronics, USA</li>
+          <li><strong>Sudip Misra</strong> — FIEEE, IIT Kharagpur, India</li>
+          <li><strong>Kashem Muttaqi</strong> — FIEEE, University of Wollongong, Australia</li>
+          <li><strong>Ujjwal Maulik</strong> — FIEEE, Jadavpur University, India</li>
+        </ul>
+      </div>
+    </article>
+  </div>
+</section>
+    <!-- FAQ -->
+    <section class="section" id="faq" data-nav="FAQ" aria-label="Frequently asked questions">
+      <div class="container">
+        <div class="section-head reveal">
+          <h2>FAQ</h2>
+          <p>Common questions regarding ICECE 2026.</p>
+        </div>
+
+        <div class="accordion reveal" data-accordion>
+          <details>
+            <summary>Do you provide visa invitation letters?</summary>
+            <p class="muted">Visa letter guidance will be published on the official ICECE website once registration opens.</p>
+          </details>
+          <details>
+            <summary>What is the paper format and page limit?</summary>
+            <p class="muted">Please refer to the Call for Papers PDF for formatting requirements and submission guidelines.</p>
+          </details>
+          <details>
+            <summary>How do I contact the organizers?</summary>
+            <p class="muted">Use the contact form below for inquiries.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="prevconf" data-nav="Previous" aria-label="Previous Conferences">
+  <div class="container">
+    <div class="section-head reveal">
+      <h2>Previous Conferences</h2>
+      <p>ICECE is the bi-annual flagship international conference series of the Department of EEE, BUET.</p>
+    </div>
+
+    <div class="prevconf-grid reveal">
+      <article class="prevconf-card">
+        <div class="prevconf-meta">
+          <span class="prevconf-tag">13th Edition</span>
+          <span class="prevconf-date">19–21 December 2024</span>
+        </div>
+        <h3>13th International Conference on Electrical and Computer Engineering</h3>
+        <p class="prevconf-short">ICECE 2024</p>
+        <div class="prevconf-links">
+          <a href="/2024">Website</a>
+          <a href="https://ieeexplore.ieee.org/xpl/conhome/11024276/proceeding" target="_blank" rel="noopener">Proceedings</a>
+          <a href="https://eee.buet.ac.bd/outreach/icece/13th_ICECE_Committees.pdf" target="_blank" rel="noopener">Committee</a>
+        </div>
+      </article>
+
+      <article class="prevconf-card">
+        <div class="prevconf-meta">
+          <span class="prevconf-tag">12th Edition</span>
+          <span class="prevconf-date">21–23 December 2022</span>
+        </div>
+        <h3>12th International Conference on Electrical and Computer Engineering</h3>
+        <p class="prevconf-short">ICECE 2022</p>
+        <div class="prevconf-links">
+          <a href="https://ieeexplore.ieee.org/xpl/conhome/10088438/proceeding" target="_blank" rel="noopener">Proceedings</a>
+          <a href="https://eee.buet.ac.bd/outreach/icece/12th_ICECE_Committees.pdf" target="_blank" rel="noopener">Committee</a>
+        </div>
+      </article>
+
+      <article class="prevconf-card">
+        <div class="prevconf-meta">
+          <span class="prevconf-tag">11th Edition</span>
+          <span class="prevconf-date">17–19 December 2020</span>
+        </div>
+        <h3>11th International Conference on Electrical and Computer Engineering</h3>
+        <p class="prevconf-short">ICECE 2020</p>
+        <div class="prevconf-links">
+          <a href="https://ieeexplore.ieee.org/xpl/conhome/9393009/proceeding" target="_blank" rel="noopener">Proceedings</a>
+          <a href="https://eee.buet.ac.bd/outreach/icece/11th_ICECE_Committees.pdf" target="_blank" rel="noopener">Committee</a>
+        </div>
+      </article>
+
+      <article class="prevconf-card">
+        <div class="prevconf-meta">
+          <span class="prevconf-tag">10th Edition</span>
+          <span class="prevconf-date">20–22 December 2018</span>
+        </div>
+        <h3>10th International Conference on Electrical and Computer Engineering</h3>
+        <p class="prevconf-short">ICECE 2018</p>
+        <div class="prevconf-links">
+          <a href="https://ieeexplore.ieee.org/xpl/conhome/8622655/proceeding" target="_blank" rel="noopener">Proceedings</a>
+          <a href="https://eee.buet.ac.bd/outreach/icece/10th_ICECE_Committees.pdf" target="_blank" rel="noopener">Committee</a>
+        </div>
+      </article>
+
+      <article class="prevconf-card">
+        <div class="prevconf-meta">
+          <span class="prevconf-tag">9th Edition</span>
+          <span class="prevconf-date">20–22 December 2016</span>
+        </div>
+        <h3>9th International Conference on Electrical and Computer Engineering</h3>
+        <p class="prevconf-short">ICECE 2016</p>
+        <div class="prevconf-links">
+          <a href="https://ieeexplore.ieee.org/xpl/conhome/7845247/proceeding" target="_blank" rel="noopener">Proceedings</a>
+          <a href="https://eee.buet.ac.bd/outreach/icece/09th_ICECE_Committees.pdf" target="_blank" rel="noopener">Committee</a>
+        </div>
+      </article>
+
+      <article class="prevconf-card">
+        <div class="prevconf-meta">
+          <span class="prevconf-tag">8th Edition</span>
+          <span class="prevconf-date">20–22 December 2014</span>
+        </div>
+        <h3>8th International Conference on Electrical and Computer Engineering</h3>
+        <p class="prevconf-short">ICECE 2014</p>
+        <div class="prevconf-links">
+          <a href="https://ieeexplore.ieee.org/xpl/conhome/7008821/proceeding" target="_blank" rel="noopener">Proceedings</a>
+          <a href="https://eee.buet.ac.bd/outreach/icece/08th_ICECE_Committees.pdf" target="_blank" rel="noopener">Committee</a>
+        </div>
+      </article>
+
+      <article class="prevconf-card">
+        <div class="prevconf-meta">
+          <span class="prevconf-tag">7th Edition</span>
+          <span class="prevconf-date">20–22 December 2012</span>
+        </div>
+        <h3>7th International Conference on Electrical and Computer Engineering</h3>
+        <p class="prevconf-short">ICECE 2012</p>
+        <div class="prevconf-links">
+          <a href="https://ieeexplore.ieee.org/xpl/conhome/6462025/proceeding" target="_blank" rel="noopener">Proceedings</a>
+          <a href="https://eee.buet.ac.bd/outreach/icece/07th_ICECE_Committees.pdf" target="_blank" rel="noopener">Committee</a>
+        </div>
+      </article>
+
+      <article class="prevconf-card">
+        <div class="prevconf-meta">
+          <span class="prevconf-tag">6th Edition</span>
+          <span class="prevconf-date">18–20 December 2010</span>
+        </div>
+        <h3>6th International Conference on Electrical and Computer Engineering</h3>
+        <p class="prevconf-short">ICECE 2010</p>
+        <div class="prevconf-links">
+          <a href="https://ieeexplore.ieee.org/xpl/conhome/5686261/proceeding" target="_blank" rel="noopener">Proceedings</a>
+          <a href="https://eee.buet.ac.bd/outreach/icece/06th_ICECE_Committees.pdf" target="_blank" rel="noopener">Committee</a>
+        </div>
+      </article>
+
+      <article class="prevconf-card">
+        <div class="prevconf-meta">
+          <span class="prevconf-tag">5th Edition</span>
+          <span class="prevconf-date">20–22 December 2008</span>
+        </div>
+        <h3>5th International Conference on Electrical and Computer Engineering</h3>
+        <p class="prevconf-short">ICECE 2008</p>
+        <div class="prevconf-links">
+          <a href="https://ieeexplore.ieee.org/xpl/conhome/4753886/proceeding" target="_blank" rel="noopener">Proceedings</a>
+          <a href="https://eee.buet.ac.bd/outreach/icece/05th_ICECE_Committees.pdf" target="_blank" rel="noopener">Committee</a>
+        </div>
+      </article>
+
+      <article class="prevconf-card">
+        <div class="prevconf-meta">
+          <span class="prevconf-tag">4th Edition</span>
+          <span class="prevconf-date">19–21 December 2006</span>
+        </div>
+        <h3>4th International Conference on Electrical and Computer Engineering</h3>
+        <p class="prevconf-short">ICECE 2006</p>
+        <div class="prevconf-links">
+          <a href="https://ieeexplore.ieee.org/xpl/conhome/4178390/proceeding" target="_blank" rel="noopener">Proceedings</a>
+          <a href="https://eee.buet.ac.bd/outreach/icece/04th_ICECE_Committees.pdf" target="_blank" rel="noopener">Committee</a>
+        </div>
+      </article>
+
+      <article class="prevconf-card">
+        <div class="prevconf-meta">
+          <span class="prevconf-tag">3rd Edition</span>
+          <span class="prevconf-date">28–30 December 2004</span>
+        </div>
+        <h3>3rd International Conference on Electrical and Computer Engineering</h3>
+        <p class="prevconf-short">ICECE 2004</p>
+        <div class="prevconf-links">
+          <a href="https://eee.buet.ac.bd/outreach/icece/03rd_ICECE_Committees.pdf" target="_blank" rel="noopener">Committee</a>
+        </div>
+      </article>
+
+      <article class="prevconf-card">
+        <div class="prevconf-meta">
+          <span class="prevconf-tag">2nd Edition</span>
+          <span class="prevconf-date">26–28 December 2002</span>
+        </div>
+        <h3>2nd International Conference on Electrical and Computer Engineering</h3>
+        <p class="prevconf-short">ICECE 2002</p>
+        <div class="prevconf-links">
+          <a href="https://eee.buet.ac.bd/outreach/icece/02nd_ICECE_Committees.pdf" target="_blank" rel="noopener">Committee</a>
+        </div>
+      </article>
+
+      <article class="prevconf-card">
+        <div class="prevconf-meta">
+          <span class="prevconf-tag">1st Edition</span>
+          <span class="prevconf-date">05–06 January 2001</span>
+        </div>
+        <h3>1st International Conference on Electrical and Computer Engineering</h3>
+        <p class="prevconf-short">ICECE 2001</p>
+        <div class="prevconf-links">
+          <a href="https://eee.buet.ac.bd/outreach/icece/01st_ICECE_Committees.pdf" target="_blank" rel="noopener">Committee</a>
+        </div>
+      </article>
+    </div>
+
+    <div class="prevconf-archive reveal">
+      <p>For a broader historical archive, visit the <a href="https://eee.buet.ac.bd/outreach/icece" target="_blank" rel="noopener">Department of EEE ICECE page</a>.</p>
+    </div>
+  </div>
+</section>
+
+
+    <!-- Contact -->
+    <section class="section alt" id="contact" data-nav="Contact" aria-label="Contact">
+      <div class="container">
+        <div class="section-head reveal">
+          <h2>Contact</h2>
+          <p>Send a message to the ICECE 2026 organizers.</p>
+        </div>
+
+        <div class="grid-2">
+          <form class="card form reveal" id="contactForm">
+            
+            <label for="cName">Name</label>
+            <input id="cName" name="name" type="text" placeholder="Your name" autocomplete="name" required />
+
+            <label for="cEmail">Email</label>
+            <input id="cEmail" name="email" type="email" placeholder="you@example.com" autocomplete="email" required />
+
+            <label for="cMsg">Message</label>
+            <textarea id="cMsg" name="message" rows="5" placeholder="How can we help?" required></textarea>
+
+            <div class="row">
+              <button class="btn btn-primary" type="submit">Send</button>
+              <p class="form-hint" id="cStatus" role="status" aria-live="polite"></p>
+            </div>
+          </form>
+
+          <aside class="card reveal">
+            <h3>Official ICECE website</h3>
+            <p class="muted">
+              For the latest announcements and official updates, please visit the ICECE website.
+            </p>
+            <a class="btn btn-ghost" href="https://icece.buet.ac.bd/" target="_blank" rel="noreferrer noopener">
+              Open icece.buet.ac.bd
+            </a>
+
+            <hr class="sep" />
+
+            <h3>Contact email</h3>
+            <p class="muted">icecetech@eee.buet.ac.bd</p>
+            <p class="muted">iceceorg@eee.buet.ac.bd</p>
+            <h3>Phone Number</h3>
+            <p class="muted">+88 0255155048</p>
+          </aside>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer" aria-label="Footer">
+    <div class="container footer-inner">
+      <div>
+        <strong>ICECE 2026</strong>
+        <p class="muted">
+          Hosted by Department of EEE, BUET • Dhaka, Bangladesh • December 10–12, 2026
+        </p>
+      </div>
+
+      <div class="footer-links">
+        <a href="#home">Top</a>
+        <a href="#submit">Submit</a>
+        <a href="#register">Register</a>
+        <a href="#contact">Contact</a>
+      </div>
+
+      <div class="social" aria-label="Social links (placeholders)">
+        <a class="icon" href="#" aria-label="X / Twitter (placeholder)">
+          <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true">
+            <path d="M18.9 2H22l-6.8 7.8L23.2 22h-6.4l-5-7.1L5.6 22H2.4l7.3-8.4L1.2 2h6.6l4.5 6.4L18.9 2zm-1.1 18h1.8L6.1 3.9H4.2L17.8 20z"/>
+          </svg>
+        </a>
+        <a class="icon" href="#" aria-label="LinkedIn (placeholder)">
+          <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true">
+            <path d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1 4.98 2.12 4.98 3.5zM.5 8h4V23h-4V8zM8 8h3.8v2.1h.1c.5-1 1.8-2.1 3.7-2.1 4 0 4.7 2.6 4.7 6V23h-4v-7.1c0-1.7 0-3.9-2.4-3.9s-2.8 1.8-2.8 3.8V23H8V8z"/>
+          </svg>
+        </a>
+        <a class="icon" href="#" aria-label="YouTube (placeholder)">
+          <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true">
+            <path d="M23.5 6.2s-.2-1.7-.8-2.4c-.8-.8-1.7-.8-2.1-.9C17.7 2.5 12 2.5 12 2.5h0s-5.7 0-8.6.4c-.4.1-1.3.1-2.1.9C.7 4.5.5 6.2.5 6.2S0 8.1 0 10v1.9c0 1.9.5 3.8.5 3.8s.2 1.7.8 2.4c.8.8 1.9.8 2.4.9 1.7.2 7.3.4 8.3.4 0 0 5.7 0 8.6-.4.4-.1 1.3-.1 2.1-.9.6-.7.8-2.4.8-2.4s.5-1.9.5-3.8V10c0-1.9-.5-3.8-.5-3.8zM9.6 14.7V7.9l6.3 3.4-6.3 3.4z"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <button class="to-top" type="button" aria-label="Back to top" data-to-top>
+    ↑
+  </button>
+
+  <script src="scripts.js" defer></script>
+
+  <!-- Minimal nav auto-builder (so commenting out a section removes it from nav) -->
+  <script>
+    (function () {
+      const navRoot = document.getElementById("navLinks");
+      if (!navRoot) return;
+
+      // Sections you want in nav must have: id + data-nav="Label"
+      const sections = Array.from(document.querySelectorAll("main section[data-nav][id]"));
+
+      // Build anchors in the same order the sections appear in the DOM
+      navRoot.innerHTML = sections
+        .map(sec => {
+          const label = sec.getAttribute("data-nav");
+          const id = sec.id;
+          return `<a href="#${id}">${label}</a>`;
+        })
+        .join("");
+
+      // Keep "Submit" in header-actions, not in nav.
+    })();
+  </script>
+</body>
+</html>
