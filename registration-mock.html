@@ -1,0 +1,567 @@
+<!doctype html>
+<html lang="en" data-theme="t1" data-mode="auto">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="ICECE 2026 Registration Mockup" />
+  <title>ICECE 2026 Registration Mockup</title>
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    .reg-page .hero{
+      padding: clamp(28px, 4vw, 44px) 0 18px;
+    }
+
+    .reg-page .hero-bg{
+      background:
+        linear-gradient(180deg, rgba(0,0,0,.45), rgba(0,0,0,.62)),
+        radial-gradient(900px 300px at 20% 20%, rgba(124,247,198,.14), transparent 60%),
+        radial-gradient(800px 260px at 90% 10%, rgba(139,183,255,.12), transparent 60%);
+    }
+
+    .reg-shell{
+      display:grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(320px, .8fr);
+      gap: var(--gap);
+      align-items:start;
+    }
+
+    .reg-stack{ display:grid; gap: var(--gap); }
+
+    .reg-form-grid{
+      display:grid;
+      grid-template-columns: repeat(2, minmax(0,1fr));
+      gap: 14px;
+    }
+
+    .field{ display:grid; gap:6px; }
+    .field.full{ grid-column: 1 / -1; }
+
+    .field label,
+    .check-group legend{
+      font-size:14px;
+      font-weight:600;
+      color: var(--muted);
+      margin:0;
+    }
+
+    .field input,
+    .field select,
+    .field textarea{
+      width:100%;
+      padding:12px 12px;
+      border-radius:14px;
+      border:1px solid var(--line);
+      background: color-mix(in srgb, var(--bg2) 80%, transparent);
+      color: var(--text);
+      outline:none;
+      font:inherit;
+    }
+
+    .field input:focus,
+    .field select:focus,
+    .field textarea:focus{
+      border-color: color-mix(in srgb, var(--brand2) 40%, var(--line));
+      box-shadow: 0 0 0 4px color-mix(in srgb, var(--brand2) 18%, transparent);
+    }
+
+    .helper{
+      font-size:12px;
+      color: var(--muted);
+      line-height:1.45;
+    }
+
+    .section-mini-title{
+      margin:0 0 10px;
+      font-size:16px;
+      font-weight:700;
+      color: var(--text);
+    }
+
+    .divider{
+      border:none;
+      border-top:1px solid var(--line);
+      margin: 4px 0;
+    }
+
+    .radio-grid,
+    .check-grid{
+      display:grid;
+      grid-template-columns: repeat(2, minmax(0,1fr));
+      gap:10px;
+    }
+
+    .choice,
+    .check-item{
+      display:flex;
+      gap:10px;
+      align-items:flex-start;
+      padding:12px;
+      border:1px solid var(--line);
+      border-radius:14px;
+      background: color-mix(in srgb, var(--card) 86%, transparent);
+    }
+
+    .choice input,
+    .check-item input{
+      width:18px;
+      height:18px;
+      margin-top:2px;
+      accent-color: var(--brand2);
+      flex:0 0 auto;
+    }
+
+    .choice strong,
+    .check-item strong{
+      display:block;
+      line-height:1.3;
+    }
+
+    .choice span,
+    .check-item span{
+      display:block;
+      margin-top:3px;
+      font-size:13px;
+      color: var(--muted);
+      line-height:1.45;
+    }
+
+    .check-group{
+      border:none;
+      margin:0;
+      padding:0;
+      display:grid;
+      gap:10px;
+    }
+
+    .paper-preview{
+      display:grid;
+      gap:10px;
+    }
+
+    .paper-item{
+      padding:12px 14px;
+      border:1px solid color-mix(in srgb, var(--brand2) 25%, var(--line));
+      border-radius:14px;
+      background:
+        radial-gradient(700px 180px at 10% 10%, rgba(124,247,198,.08), transparent 60%),
+        color-mix(in srgb, var(--card2) 88%, transparent);
+    }
+
+    .paper-id{
+      font-size:11px;
+      font-weight:800;
+      letter-spacing:.12em;
+      text-transform:uppercase;
+      color: var(--brand);
+    }
+
+    .paper-title{
+      margin-top:5px;
+      font-weight:700;
+      line-height:1.4;
+    }
+
+    .paper-authors{
+      margin-top:4px;
+      font-size:13px;
+      color: var(--muted);
+    }
+
+    .price-box{
+      display:grid;
+      gap:10px;
+    }
+
+    .price-row,
+    .summary-row{
+      display:flex;
+      justify-content:space-between;
+      gap:12px;
+      padding:11px 0;
+      border-bottom:1px solid var(--line);
+    }
+
+    .price-row:last-child,
+    .summary-row:last-child{ border-bottom:none; }
+
+    .price-row span:first-child,
+    .summary-row span:first-child{ color: var(--muted); }
+    .price-row strong,
+    .summary-row strong{ color: var(--text); }
+
+    .upload-box{
+      padding:14px;
+      border:1px dashed color-mix(in srgb, var(--brand2) 35%, var(--line));
+      border-radius:16px;
+      background: color-mix(in srgb, var(--card2) 72%, transparent);
+    }
+
+    .upload-box input[type="file"]{
+      padding:10px;
+      background: transparent;
+      border:1px dashed var(--line);
+    }
+
+    .notice-list{
+      margin:0;
+      padding-left:18px;
+      color: var(--muted);
+    }
+
+    .notice-list li{ margin:8px 0; }
+
+    .sticky-card{
+      position: sticky;
+      top: 94px;
+    }
+
+    .cta-block{
+      display:grid;
+      gap:10px;
+      margin-top:14px;
+    }
+
+    .fine-print{
+      font-size:12px;
+      color: var(--muted);
+      line-height:1.5;
+    }
+
+    @media (max-width: 980px){
+      .reg-shell{ grid-template-columns: 1fr; }
+      .sticky-card{ position: static; }
+    }
+
+    @media (max-width: 720px){
+      .reg-form-grid,
+      .radio-grid,
+      .check-grid{ grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body class="reg-page">
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header" id="top">
+    <div class="container header-inner">
+      <a class="brand" href="index.html#home" aria-label="ICECE 2026 home">
+        <span class="brand-text">
+          <span class="brand-title-row">
+            <span class="brand-title">ICECE 2026</span>
+            <span class="brand-date">December 10–12, 2026</span>
+          </span>
+          <span class="brand-location">BUET · Dhaka · Bangladesh</span>
+        </span>
+      </a>
+
+      <nav class="nav" aria-label="Primary">
+        <div class="nav-links">
+          <a href="index.html#about">About</a>
+          <a href="index.html#dates">Dates</a>
+          <a href="index.html#submit">Submit</a>
+          <a href="#registration" class="active">Register</a>
+          <a href="index.html#contact">Contact</a>
+        </div>
+      </nav>
+
+      <div class="header-actions">
+        <a class="btn btn-ghost btn-compact" href="index.html">Main Site</a>
+        <a class="btn btn-primary btn-compact" href="#registration">Continue</a>
+      </div>
+    </div>
+    <div class="scroll-progress" aria-hidden="true"><span style="width:42%"></span></div>
+  </header>
+
+  <main id="main">
+    <section class="hero" aria-label="Registration overview">
+      <div class="hero-bg" aria-hidden="true"></div>
+      <div class="container hero-inner">
+        <div class="hero-copy reveal in">
+          <p class="kicker">Conference Registration Portal</p>
+          <h1>Register for ICECE 2026</h1>
+          <p class="lead">
+            Minimal mock front end for author and participant registration, styled to match the main ICECE website and ready for later integration with paper CSV lookup and SSLCommerz workflow.
+          </p>
+
+          <div class="hero-meta">
+            <div class="meta-pill">
+              <span class="meta-label">Portal status</span>
+              <span class="meta-value">Mock UI only</span>
+            </div>
+            <div class="meta-pill">
+              <span class="meta-label">Planned features</span>
+              <span class="meta-value">Paper lookup · fees · payment</span>
+            </div>
+          </div>
+
+          <div class="cta-row">
+            <a class="btn btn-primary" href="#registration">Open Registration Form</a>
+            <a class="btn btn-ghost" href="#fee-card">View Fee Preview</a>
+          </div>
+        </div>
+
+        <div class="hero-card reveal in">
+          <div class="card">
+            <h2 class="card-title">What this mock includes</h2>
+            <ul class="link-list">
+              <li>Registration category and membership selection</li>
+              <li>Paper ID entry with CSV-style lookup placeholder</li>
+              <li>Author information and invoice fields</li>
+              <li>Upload area for proof or student ID</li>
+              <li>Sticky fee summary and submission actions</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="registration" data-nav="Register" aria-label="Registration form">
+      <div class="container">
+        <div class="section-head reveal in">
+          <h2>Registration Form</h2>
+          <p>
+            This is a front-end mockup only. Buttons, paper search, payment initiation, and data saving are currently non-functional placeholders.
+          </p>
+        </div>
+
+        <div class="reg-shell">
+          <div class="reg-stack">
+            <article class="card reveal in">
+              <h3 class="card-title">Registration Type</h3>
+              <div class="radio-grid" role="radiogroup" aria-label="Registration type">
+                <label class="choice">
+                  <input type="radio" name="regtype" checked />
+                  <span>
+                    <strong>Author Registration</strong>
+                    <span>For accepted paper presenters and co-authors.</span>
+                  </span>
+                </label>
+                <label class="choice">
+                  <input type="radio" name="regtype" />
+                  <span>
+                    <strong>Listener / Participant</strong>
+                    <span>For non-author attendees joining sessions only.</span>
+                  </span>
+                </label>
+                <label class="choice">
+                  <input type="radio" name="regtype" />
+                  <span>
+                    <strong>Student Author</strong>
+                    <span>Discounted author category with student verification.</span>
+                  </span>
+                </label>
+                <label class="choice">
+                  <input type="radio" name="regtype" />
+                  <span>
+                    <strong>Committee / Invited</strong>
+                    <span>Passcode-controlled special category placeholder.</span>
+                  </span>
+                </label>
+              </div>
+            </article>
+
+            <article class="card reveal in">
+              <h3 class="card-title">Paper & Account Details</h3>
+              <form class="reg-form-grid">
+                <div class="field">
+                  <label for="paperId">Paper ID</label>
+                  <input id="paperId" type="text" placeholder="e.g., ICECE-157" />
+                  <span class="helper">Later this will validate against the accepted-paper CSV list.</span>
+                </div>
+
+                <div class="field">
+                  <label for="paperId2">Second Paper ID (optional)</label>
+                  <input id="paperId2" type="text" placeholder="Optional additional paper" />
+                </div>
+
+                <div class="field full">
+                  <label for="paperSearch">Paper lookup preview</label>
+                  <input id="paperSearch" type="text" placeholder="Type paper ID / title / author to filter accepted-paper CSV" />
+                </div>
+
+                <div class="field">
+                  <label for="fullname">Full Name</label>
+                  <input id="fullname" type="text" placeholder="Dr. Jane Author" />
+                </div>
+
+                <div class="field">
+                  <label for="email">Email Address</label>
+                  <input id="email" type="email" placeholder="author@example.com" />
+                </div>
+
+                <div class="field">
+                  <label for="affiliation">Affiliation</label>
+                  <input id="affiliation" type="text" placeholder="University / Company" />
+                </div>
+
+                <div class="field">
+                  <label for="country">Country</label>
+                  <select id="country">
+                    <option>Bangladesh</option>
+                    <option>India</option>
+                    <option>USA</option>
+                    <option>UK</option>
+                    <option>Other</option>
+                  </select>
+                </div>
+
+                <div class="field">
+                  <label for="phone">Phone</label>
+                  <input id="phone" type="tel" placeholder="+8801XXXXXXXXX" />
+                </div>
+
+                <div class="field">
+                  <label for="ieee">IEEE Membership</label>
+                  <select id="ieee">
+                    <option>Non-IEEE Member</option>
+                    <option>IEEE Member</option>
+                    <option>IEEE Student Member</option>
+                  </select>
+                </div>
+
+                <div class="field full">
+                  <label for="address">Billing / Mailing Address</label>
+                  <textarea id="address" rows="3" placeholder="Department, institution, street, city, postal code"></textarea>
+                </div>
+
+                <div class="field">
+                  <label for="invoiceName">Invoice Name</label>
+                  <input id="invoiceName" type="text" placeholder="Name to appear on receipt" />
+                </div>
+
+                <div class="field">
+                  <label for="taxid">TIN / VAT / Tax ID (optional)</label>
+                  <input id="taxid" type="text" placeholder="Optional" />
+                </div>
+              </form>
+            </article>
+
+            <article class="card reveal in">
+              <h3 class="card-title">Matched Paper Preview</h3>
+              <p class="helper">Static mock cards below show how accepted-paper data from CSV can appear after lookup.</p>
+              <div class="paper-preview" style="margin-top:12px;">
+                <div class="paper-item">
+                  <div class="paper-id">Paper ID · ICECE-157</div>
+                  <div class="paper-title">Low-Power Edge-AI Framework for Multimodal Health Monitoring</div>
+                  <div class="paper-authors">Sajid M. Choudhury, A. Author, B. Researcher</div>
+                </div>
+                <div class="paper-item">
+                  <div class="paper-id">Optional second paper · ICECE-244</div>
+                  <div class="paper-title">Robust Embedded Inference Under Intermittent Connectivity</div>
+                  <div class="paper-authors">C. Student, D. Faculty, E. Collaborator</div>
+                </div>
+              </div>
+            </article>
+
+            <article class="card reveal in">
+              <h3 class="card-title">Supporting Documents</h3>
+              <div class="upload-box">
+                <div class="reg-form-grid">
+                  <div class="field full">
+                    <label for="proof">Upload student ID / proof of category / payment note</label>
+                    <input id="proof" type="file" />
+                  </div>
+                  <div class="field full">
+                    <label for="remarks">Special Remarks</label>
+                    <textarea id="remarks" rows="3" placeholder="Any registration note, dietary issue, invoice note, or committee passcode remark"></textarea>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="card reveal in">
+              <h3 class="card-title">Declarations</h3>
+              <fieldset class="check-group">
+                <legend>Confirmations</legend>
+                <div class="check-grid">
+                  <label class="check-item">
+                    <input type="checkbox" checked />
+                    <span>
+                      <strong>Information is accurate</strong>
+                      <span>I confirm the submitted profile and paper details are correct.</span>
+                    </span>
+                  </label>
+                  <label class="check-item">
+                    <input type="checkbox" checked />
+                    <span>
+                      <strong>Conference policy acceptance</strong>
+                      <span>I accept conference registration, refund, and publication policies.</span>
+                    </span>
+                  </label>
+                  <label class="check-item">
+                    <input type="checkbox" />
+                    <span>
+                      <strong>Email updates</strong>
+                      <span>Receive registration status and conference notices by email.</span>
+                    </span>
+                  </label>
+                  <label class="check-item">
+                    <input type="checkbox" />
+                    <span>
+                      <strong>Need invoice copy</strong>
+                      <span>Request a formal receipt/invoice after successful payment.</span>
+                    </span>
+                  </label>
+                </div>
+              </fieldset>
+            </article>
+          </div>
+
+          <aside class="reg-stack sticky-card">
+            <article class="card reveal in" id="fee-card">
+              <h3 class="card-title">Fee Preview</h3>
+              <div class="price-box">
+                <div class="price-row"><span>Category</span><strong>Author · IEEE Member</strong></div>
+                <div class="price-row"><span>Base fee</span><strong>BDT 8,000</strong></div>
+                <div class="price-row"><span>Additional paper</span><strong>BDT 2,000</strong></div>
+                <div class="price-row"><span>Gateway charge</span><strong>As applicable</strong></div>
+              </div>
+            </article>
+
+            <article class="card reveal in">
+              <h3 class="card-title">Registration Summary</h3>
+              <div class="summary-row"><span>Name</span><strong>Jane Author</strong></div>
+              <div class="summary-row"><span>Papers</span><strong>2 selected</strong></div>
+              <div class="summary-row"><span>Member type</span><strong>IEEE Member</strong></div>
+              <div class="summary-row"><span>Total</span><strong>BDT 10,000</strong></div>
+
+              <div class="cta-block">
+                <button class="btn btn-primary" type="button">Proceed to SSLCommerz</button>
+                <button class="btn btn-ghost" type="button">Save Draft</button>
+              </div>
+
+              <p class="fine-print">
+                In the real app, this button would create the registration record, upload the file, and then redirect to SSLCommerz or bypass payment for approved special categories.
+              </p>
+            </article>
+
+            <article class="card reveal in">
+              <h3 class="card-title">Notes</h3>
+              <ul class="notice-list">
+                <li>Author registration should be linked to accepted-paper CSV records.</li>
+                <li>Fees can later be populated from a simple JSON or config table.</li>
+                <li>Special categories may use passcode verification before payment.</li>
+                <li>The layout is intentionally minimal and visually aligned with the main site.</li>
+              </ul>
+            </article>
+          </aside>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer" aria-label="Footer">
+    <div class="container footer-inner">
+      <div>
+        <strong>ICECE 2026 Registration Mock</strong>
+        <p class="muted">Front-end prototype styled to match the ICECE main website.</p>
+      </div>
+      <div class="footer-links">
+        <a href="#top">Top</a>
+        <a href="#registration">Register</a>
+        <a href="index.html">Main site</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
