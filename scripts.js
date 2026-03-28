@@ -238,3 +238,109 @@ Email: ${email || "[Your email]"}`;
 }
 
 })();
+
+(function () {
+  const hero = document.querySelector("[data-hero-slider]");
+  if (!hero) return;
+
+  const slides = Array.from(hero.querySelectorAll(".hero-slide"));
+  const dotsWrap = hero.querySelector(".hero-dots");
+  if (!slides.length || !dotsWrap) return;
+
+  const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+  const autoplayDelay = 5500;
+
+  let current = 0;
+  let timer = null;
+
+  function setActive(index) {
+    slides.forEach((slide, i) => {
+      slide.classList.toggle("is-active", i === index);
+      slide.setAttribute("aria-hidden", i === index ? "false" : "true");
+    });
+
+    const dots = dotsWrap.querySelectorAll(".hero-dot");
+    dots.forEach((dot, i) => {
+      const active = i === index;
+      dot.classList.toggle("is-active", active);
+      dot.setAttribute("aria-selected", active ? "true" : "false");
+      dot.setAttribute("aria-current", active ? "true" : "false");
+    });
+
+    current = index;
+  }
+
+  function nextSlide() {
+    const next = (current + 1) % slides.length;
+    setActive(next);
+  }
+
+  function stopAutoplay() {
+    if (timer) {
+      clearInterval(timer);
+      timer = null;
+    }
+  }
+
+  function startAutoplay() {
+    stopAutoplay();
+    if (reduceMotion.matches || slides.length < 2) return;
+    timer = setInterval(nextSlide, autoplayDelay);
+  }
+
+  function restartAutoplay() {
+    startAutoplay();
+  }
+
+  slides.forEach((slide, i) => {
+    slide.setAttribute("aria-hidden", i === 0 ? "false" : "true");
+
+    const dot = document.createElement("button");
+    dot.type = "button";
+    dot.className = "hero-dot" + (i === 0 ? " is-active" : "");
+    dot.setAttribute("aria-label", `Go to slide ${i + 1}`);
+    dot.setAttribute("aria-selected", i === 0 ? "true" : "false");
+    dot.setAttribute("aria-current", i === 0 ? "true" : "false");
+
+    dot.addEventListener("click", function () {
+      setActive(i);
+      restartAutoplay();
+    });
+
+    dotsWrap.appendChild(dot);
+  });
+
+  hero.addEventListener("mouseenter", stopAutoplay);
+  hero.addEventListener("mouseleave", startAutoplay);
+  hero.addEventListener("focusin", stopAutoplay);
+  hero.addEventListener("focusout", startAutoplay);
+
+  document.addEventListener("visibilitychange", function () {
+    if (document.hidden) {
+      stopAutoplay();
+    } else {
+      startAutoplay();
+    }
+  });
+
+  if (typeof reduceMotion.addEventListener === "function") {
+    reduceMotion.addEventListener("change", function () {
+      if (reduceMotion.matches) {
+        stopAutoplay();
+      } else {
+        startAutoplay();
+      }
+    });
+  } else if (typeof reduceMotion.addListener === "function") {
+    reduceMotion.addListener(function () {
+      if (reduceMotion.matches) {
+        stopAutoplay();
+      } else {
+        startAutoplay();
+      }
+    });
+  }
+
+  setActive(0);
+  startAutoplay();
+})();

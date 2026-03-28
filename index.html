@@ -110,67 +110,81 @@
 
   <main id="main">
     <!-- Hero -->
-    <section class="hero" id="home" aria-label="Conference overview">
-      <div class="hero-bg" aria-hidden="true"></div>
+    <section class="hero" id="home" aria-label="Conference overview" data-hero-slider>
+  <div class="hero-bg" aria-hidden="true">
+    <div class="hero-slide is-active" style="background-image:url('assets/hero/hero.webp')"></div>
+    <div class="hero-slide" style="background-image:url('assets/hero/dhaka.webp')"></div>
+    <div class="hero-slide" style="background-image:url('assets/hero/ECE.webp')"></div>
+    <!-- <div class="hero-slide" style="background-image:url('assets/hero/lalbag-kella.webp')"></div> -->
+    <!-- <div class="hero-slide" style="background-image:url('assets/hero/shahid-minar.webp')"></div> -->
+  </div>
 
-      <div class="container hero-inner">
-        <div class="hero-copy reveal">
-          <p class="kicker">14th International Conference on Electrical and Computer Engineering</p>
-          <h1>ICECE 2026</h1>
-          <p class="lead">
-            A premier international forum for researchers, practitioners, and industry leaders in Electrical &amp; Computer Engineering.
-          </p>
+  <div class="hero-overlay" aria-hidden="true"></div>
 
-          <div class="hero-meta">
-            <div class="meta-pill">
-              <span class="meta-label">Dates</span>
-              <span class="meta-value">December 10–12, 2026</span>
-            </div>
-            <div class="meta-pill">
-              <span class="meta-label">Location</span>
-              <span class="meta-value">BUET, Dhaka, Bangladesh</span>
-            </div>
-          </div>
+  <div class="container hero-inner">
+    <div class="hero-copy reveal">
+      <div class="eyebrow-pill">14th International Conference on Electrical and Computer Engineering</div>
 
-          <div class="cta-row">
-            <a class="btn btn-primary" href="#submit">Submit Paper</a>
-            <a class="btn btn-ghost" href="#register">Register</a>
-            <a class="btn btn-link" href="#cfp">View Call for Papers →</a>
-          </div>
+      <h1>ICECE 2026</h1>
+
+      <p class="hero-lead">
+        A premier international forum for researchers, practitioners, and
+        industry leaders in Electrical &amp; Computer Engineering.
+      </p>
+
+      <div class="hero-meta">
+        <div class="meta-card">
+          <span class="meta-label">Dates</span>
+          <strong>December 10–12, 2026</strong>
         </div>
 
-        <div class="hero-card reveal">
-          <div class="card">
-            <h2 class="card-title">Quick Links</h2>
-            <ul class="link-list">
-              <li><a href="#dates">Important Dates</a></li>
-              <li><a href="#program">Program at a glance</a></li>
-              <li><a href="#venue">Venue &amp; Travel</a></li>
-              <li><a href="#register">Registration</a></li>
-            </ul>
-
-            <hr class="sep" />
-
-            <!-- Right-side logos (below important links) -->
-            <div class="side-badges">
-              <div class="side-badge">
-                <div class="side-badge-label">Organized by</div>
-                <div class="side-badge-body">
-                  <img class="side-logo" src="assets/buet_eee_full_logo.svg" alt="BUET Department of EEE logo">
-                </div>
-              </div>
-
-              <div class="side-badge">
-                <div class="side-badge-label">Technical Cosponsored by</div>
-                <div class="side-badge-body">
-                  <img class="side-logo" src="assets/IEEEBDSLB.png" alt="IEEE Bangladesh Section logo">
-                </div>
-              </div>
-            </div>
-          </div>
+        <div class="meta-card">
+          <span class="meta-label">Location</span>
+          <strong>BUET, Dhaka, Bangladesh</strong>
         </div>
       </div>
-    </section>
+
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="#papers">Submit Paper</a>
+        <a class="btn btn-ghost" href="#registration">Register</a>
+        <a class="hero-link" href="#call">View Call for Papers <span aria-hidden="true">→</span></a>
+      </div>
+    </div>
+
+    <aside class="hero-panel glass reveal" aria-label="Conference quick links">
+      <h2>Quick Links</h2>
+
+      <ul class="quick-links">
+        <li><a href="#dates">Important Dates</a></li>
+        <li><a href="#program">Program at a Glance</a></li>
+        <li><a href="#venue">Venue &amp; Travel</a></li>
+        <li><a href="#registration">Registration</a></li>
+      </ul>
+
+      <div class="panel-logo-block">
+        <div class="panel-subcard">
+          <p class="panel-label">Organized by</p>
+          <div class="hero-org-logos">
+            <img src="assets/logos/buet-eee.svg" alt="BUET and Department of Electrical and Electronic Engineering" />
+
+          </div>
+        </div>
+
+        <div class="panel-subcard">
+          <p class="panel-label">Technical Cosponsored by</p>
+<div class="hero-org-logos">
+  <picture>
+    <source srcset="assets/logos/ieee-bd-section-white.png" media="(prefers-color-scheme: dark)">
+    <img src="assets/logos/ieee-bd-section.png" alt="IEEE Bangladesh Section">
+  </picture>
+</div>
+        </div>
+      </div>
+    </aside>
+  </div>
+
+  <div class="hero-dots" aria-label="Hero background slides"></div>
+</section>
 
     <!-- About -->
     <section class="section" id="about" data-nav="About" aria-label="About ICECE">
@@ -178,12 +192,10 @@
         <div class="section-head reveal">
           <h2>About ICECE</h2>
           <p>
-            ICECE is an international conference hosted at Bangladesh University of Engineering and Technology (BUET),
-            bringing together cutting-edge research across electrical, electronic, and computer engineering. The conference
-            features keynote talks, peer-reviewed technical sessions, poster presentations, and industry engagement.
+            The 14th International Conference on Electrical and Computer Engineering (ICECE 2026) is the pioneering international conference in the areas of electrical and computer engineering. ICECE brings together individuals from academia, research organizations, government, and industry, to discuss and share ideas and present their latest findings and experiences in the areas of electrical and computer engineering. Prospective authors are invited to submit original technical papers for presentation at the conference and publication in the conference proceedings. Accepted and presented papers will be submitted for inclusion into IEEE Xplore subject to meeting IEEE Xplore's scope and quality requirements.
           </p>
         </div>
-
+<!--
         <div class="grid-3">
           <article class="card reveal">
             <h3>Scope</h3>
@@ -209,6 +221,7 @@
             </p>
           </article>
         </div>
+        -->
       </div>
     </section>
 <!-- Call for Papers -->
@@ -228,7 +241,7 @@
         <p class="muted">Get the full Call for Papers document including topics, formatting, and submission guidelines.</p>
       </div>
       <div class="callout-actions">
-        <a class="btn btn-primary" href="call-for-papers.pdf" target="_blank" rel="noreferrer noopener">
+        <a class="btn btn-primary" href="pdf/call-for-papers.pdf" target="_blank" rel="noreferrer noopener">
           Click here to download the Call for Papers
         </a>
       </div>
@@ -397,6 +410,7 @@
 </section>
 
 <!-- Speakers (optional section — if you comment this out, nav will auto-hide it) -->
+<!--
 <section class="section alt" id="speakers" data-nav="Speakers" aria-label="Keynote and invited speakers">
   <div class="container">
     <div class="section-head reveal">
@@ -454,6 +468,8 @@
     </div>
   </div>
 </section>
+
+-->
 
 <!-- Important Dates -->
 <section class="section" id="dates" data-nav="Dates" aria-label="Important dates">
@@ -545,6 +561,7 @@
 </section>
 
     <!-- Program / Schedule -->
+    <!--
     <section class="section alt" id="program" data-nav="Program" aria-label="Program schedule">
       <div class="container">
         <div class="section-head reveal">
@@ -605,18 +622,17 @@
         </div>
       </div>
     </section>
-
+-->
     <!-- Venue -->
     <section class="section" id="venue" data-nav="Venue" aria-label="Venue and travel">
       <div class="container">
         <div class="section-head reveal">
           <h2>Venue &amp; Travel</h2>
           <p>
-            ICECE 2026 will be hosted at Bangladesh University of Engineering and Technology (BUET), Dhaka. Dhaka is the
-            capital of Bangladesh and a major hub for academia, industry, and innovation.
+            ECE Building,  Bangladesh University of Engineering and Technology (BUET), Dhaka. 
           </p>
         </div>
-
+<!--
         <div class="grid-2">
           <article class="card reveal">
             <h3>Venue</h3>
@@ -658,6 +674,7 @@
             </p>
           </article>        </div>
       </div>
+      -->
     </section>
 
     <!-- Registration -->
@@ -788,7 +805,7 @@
         </ul>
       </article>
     </div>
-
+<!--
     <article class="prevconf-card committee-card committee-card-wide reveal">
       <div class="prevconf-meta">
         <span class="prevconf-tag">International Advisory Committee</span>
@@ -824,9 +841,12 @@
         </ul>
       </div>
     </article>
+    -->
   </div>
 </section>
     <!-- FAQ -->
+
+    <!--
     <section class="section" id="faq" data-nav="FAQ" aria-label="Frequently asked questions">
       <div class="container">
         <div class="section-head reveal">
@@ -850,7 +870,7 @@
         </div>
       </div>
     </section>
-
+-->
     <section class="section" id="prevconf" data-nav="Previous" aria-label="Previous Conferences">
   <div class="container">
     <div class="section-head reveal">
@@ -867,7 +887,7 @@
         <h3>13th International Conference on Electrical and Computer Engineering</h3>
         <p class="prevconf-short">ICECE 2024</p>
         <div class="prevconf-links">
-          <a href="/assets/favicon/2024">Website</a>
+          <a href="/2024">Website</a>
           <a href="https://ieeexplore.ieee.org/xpl/conhome/11024276/proceeding" target="_blank" rel="noopener">Proceedings</a>
           <a href="https://eee.buet.ac.bd/outreach/icece/13th_ICECE_Committees.pdf" target="_blank" rel="noopener">Committee</a>
         </div>
