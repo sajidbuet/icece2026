@@ -1463,3 +1463,16 @@ details p{ margin: 10px 0 0; }
   max-width:80%;
   height:auto;
 }
+
+.footer-credit{
+  margin-top: 10px;
+  font-size: 0.95rem;
+  color: var(--muted);
+}
+.footer-credit a{
+  color: inherit;
+  text-decoration: none;
+}
+.footer-credit a:hover{
+  text-decoration: underline;
+}
