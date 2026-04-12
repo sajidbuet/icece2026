@@ -70,23 +70,29 @@
       </nav>
 
       <div class="header-actions">
-        <!-- <button class="mode-toggle" type="button" data-mode-toggle aria-label="Change color theme">
-          <span class="mode-icon" aria-hidden="true">🟦</span>
-          <span class="mode-label">Cyan</span>
-        </button> -->
+<button
+  class="mode-toggle"
+  type="button"
+  data-mode-toggle
+  aria-label="Toggle color mode"
+  title="Toggle light and dark mode"
+>
+  <span class="mode-icon" aria-hidden="true">◐</span>
         
-    <button
-      class="announcement-reopen"
-      type="button"
-      id="announcementReopen"
-      aria-label="Show announcements"
-      aria-controls="announcementBar"
-      aria-expanded="false"
-      title="Show announcements"
-      hidden
-    >
-      <span class="announcement-reopen-icon" aria-hidden="true">📰</span>
-    </button>
+
+        <button
+    class="announcement-reopen"
+    type="button"
+    id="announcementReopen"
+    aria-label="Show announcements"
+    aria-controls="announcementBar"
+    aria-expanded="false"
+    title="Show announcements"
+    hidden
+  >
+    <span class="announcement-reopen-icon" aria-hidden="true">📣</span>
+  </button>
+    
     
         <a class="btn btn-primary btn-compact" href="#submit">Submit</a>
       </div>
@@ -116,7 +122,7 @@
     <div class="hero-slide" style="background-image:url('assets/hero/dhaka.webp')"></div>
     <div class="hero-slide" style="background-image:url('assets/hero/ECE.webp')"></div>
     <!-- <div class="hero-slide" style="background-image:url('assets/hero/lalbag-kella.webp')"></div> -->
-    <!-- <div class="hero-slide" style="background-image:url('assets/hero/shahid-minar.webp')"></div> -->
+    <div class="hero-slide" style="background-image:url('assets/hero/shahid-minar.webp')"></div>
   </div>
 
   <div class="hero-overlay" aria-hidden="true"></div>
@@ -128,8 +134,8 @@
       <h1>ICECE 2026</h1>
 
       <p class="hero-lead">
-        A premier international forum for researchers, practitioners, and
-        industry leaders in Electrical &amp; Computer Engineering.
+        The pioneering international conference for 
+        researchers, practitioners, and industry leaders in Electrical &amp; Computer Engineering.
       </p>
 
       <div class="hero-meta">
@@ -158,25 +164,39 @@
         <li><a href="#dates">Important Dates</a></li>
         <li><a href="#program">Program at a Glance</a></li>
         <li><a href="#venue">Venue &amp; Travel</a></li>
-        <li><a href="#registration">Registration</a></li>
+        <li><a href="#register">Registration</a></li>
       </ul>
 
       <div class="panel-logo-block">
         <div class="panel-subcard">
           <p class="panel-label">Organized by</p>
-          <div class="hero-org-logos">
-            <img src="assets/logos/buet-eee.svg" alt="BUET and Department of Electrical and Electronic Engineering" />
-
+          <div class="hero-org-logos hero-org-logos--swap">
+            <img
+              class="logo-light"
+              src="assets/logos/buet-eee.svg"
+              alt="BUET and Department of Electrical and Electronic Engineering"
+            />
+            <img
+              class="logo-dark"
+              src="assets/logos/buet-eee-white.svg"
+              alt="BUET and Department of Electrical and Electronic Engineering"
+            />
           </div>
         </div>
 
         <div class="panel-subcard">
           <p class="panel-label">Technical Cosponsored by</p>
-<div class="hero-org-logos">
-  <picture>
-    <source srcset="assets/logos/ieee-bd-section-white.png" media="(prefers-color-scheme: dark)">
-    <img src="assets/logos/ieee-bd-section.png" alt="IEEE Bangladesh Section">
-  </picture>
+<div class="hero-org-logos hero-org-logos--swap">
+  <img
+    class="logo-light"
+    src="assets/logos/ieee-bd-section.png"
+    alt="IEEE Bangladesh Section"
+  />
+  <img
+    class="logo-dark"
+    src="assets/logos/ieee-bd-section-white.png"
+    alt="IEEE Bangladesh Section"
+  />
 </div>
         </div>
       </div>
@@ -235,18 +255,15 @@
       </p>
     </div>
 
-    <div class="callout reveal" style="margin-top: 0;">
-      <div>
-        <h3>Download the Call for Papers</h3>
-        <p class="muted">Get the full Call for Papers document including topics, formatting, and submission guidelines.</p>
-      </div>
+    
       <div class="callout-actions">
         <a class="btn btn-primary" href="pdf/call-for-papers.pdf" target="_blank" rel="noreferrer noopener">
           Click here to download the Call for Papers
         </a>
-      </div>
-    </div>
+    
 
+    </div>
+<!--
     <div class="chips reveal" role="list" aria-label="Topic areas" style="margin-top: 16px;">
       <span class="chip" role="listitem">Signal Processing</span>
       <span class="chip" role="listitem">Communications &amp; Networking</span>
@@ -262,6 +279,7 @@
       <span class="chip" role="listitem">IoT &amp; Edge Computing</span>
     </div>
   </div>
+  -->
 </section>
 
 <!-- Paper Submission -->
@@ -307,8 +325,8 @@
 
     <div class="grid-2">
 
-      <article class="card reveal">
-        <h3>Track 1: Algorithms, Artificial Intelligence and Data Science</h3>
+      <article class="card reveal" data-track="Track 1">
+        <h3>Algorithms, Artificial Intelligence and Data Science</h3>
         <ul class="bullets">
           <li>Algorithms and Computation</li>
           <li>Artificial Intelligence and Machine Learning</li>
@@ -321,8 +339,8 @@
         </ul>
       </article>
 
-      <article class="card reveal">
-        <h3>Track 2: Computer Systems, Networks and Security</h3>
+      <article class="card reveal" data-track="Track 2">
+        <h3>Computer Systems, Networks and Security</h3>
         <ul class="bullets">
           <li>Computer Architecture &amp; Systems</li>
           <li>Computer Networks and Security</li>
@@ -333,8 +351,8 @@
         </ul>
       </article>
 
-      <article class="card reveal">
-        <h3>Track 3: Signal Processing, Computer Vision and Human–Computer Interaction</h3>
+      <article class="card reveal" data-track="Track 3">
+        <h3>Signal Processing, Computer Vision and Human–Computer Interaction</h3>
         <ul class="bullets">
           <li>Signal, Image &amp; Video Processing</li>
           <li>Computer Vision, Graphics &amp; HCI</li>
@@ -344,8 +362,8 @@
         </ul>
       </article>
 
-      <article class="card reveal">
-        <h3>Track 4: Communication Systems and Networks</h3>
+      <article class="card reveal" data-track="Track 4">
+        <h3>Communication Systems and Networks</h3>
         <ul class="bullets">
           <li>Telecommunication Theory and Systems</li>
           <li>Wireless Communication and Networks</li>
@@ -356,8 +374,8 @@
         </ul>
       </article>
 
-      <article class="card reveal">
-        <h3>Track 5: Electronic Devices, Materials and Photonics</h3>
+      <article class="card reveal" data-track="Track 5">
+        <h3>Electronic Devices, Materials and Photonics</h3>
         <ul class="bullets">
           <li>Electronic and Photonic Materials</li>
           <li>Electronic Devices</li>
@@ -368,8 +386,8 @@
         </ul>
       </article>
 
-      <article class="card reveal">
-        <h3>Track 6: VLSI, Nanotechnology and Microsystems</h3>
+      <article class="card reveal" data-track="Track 6">
+        <h3>VLSI, Nanotechnology and Microsystems</h3>
         <ul class="bullets">
           <li>VLSI Circuits &amp; Systems</li>
           <li>Nanotechnology and MEMS</li>
@@ -379,8 +397,8 @@
         </ul>
       </article>
 
-      <article class="card reveal">
-        <h3>Track 7: Power, Energy and Smart Grid Technologies</h3>
+      <article class="card reveal" data-track="Track 7">
+        <h3>Power, Energy and Smart Grid Technologies</h3>
         <ul class="bullets">
           <li>Electrical Machines &amp; Drives</li>
           <li>Power Electronics</li>
@@ -393,8 +411,8 @@
         </ul>
       </article>
 
-      <article class="card reveal">
-        <h3>Track 8: Robotics, Automation, Biomedical and Emerging Technologies</h3>
+      <article class="card reveal" data-track="Track 8">
+        <h3>Robotics, Automation, Biomedical and Emerging Technologies</h3>
         <ul class="bullets">
           <li>Robotics, Control &amp; Automation</li>
           <li>Biomedical Engineering &amp; Bioinformatics</li>

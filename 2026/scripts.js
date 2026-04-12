@@ -1,24 +1,56 @@
 (() => {
   const root = document.documentElement;
 
-  // -------- Theme (dark mode toggle) --------
-  const storedTheme = localStorage.getItem("theme");
-  if (storedTheme === "dark" || storedTheme === "light") {
-    root.setAttribute("data-theme", storedTheme);
-  } else {
-    // Follow system by default: do nothing (CSS uses prefers-color-scheme)
-    root.removeAttribute("data-theme");
-  }
 
-  const themeBtn = document.querySelector("[data-mode-toggle]");
-  if (themeBtn) {
-    themeBtn.addEventListener("click", () => {
-      const current = root.getAttribute("data-theme"); // "dark" | "light" | null
-      const next = current === "dark" ? "light" : "dark";
-      root.setAttribute("data-theme", next);
-      localStorage.setItem("theme", next);
+
+  // -------- Color mode toggle (light / dark) --------
+  const modeBtn = document.querySelector("[data-mode-toggle]");
+  const storedMode = localStorage.getItem("mode");
+
+  const applyMode = (mode) => {
+    if (mode === "light" || mode === "dark") {
+      root.setAttribute("data-mode", mode);
+    } else {
+      root.setAttribute("data-mode", "auto");
+    }
+
+    if (modeBtn) {
+      const current = root.getAttribute("data-mode") || "auto";
+      const icon = modeBtn.querySelector(".mode-icon");
+
+      modeBtn.setAttribute(
+        "aria-label",
+        current === "dark" ? "Switch to light mode" : "Switch to dark mode"
+      );
+      modeBtn.setAttribute(
+        "title",
+        current === "dark" ? "Light mode" : "Dark mode"
+      );
+
+      if (icon) {
+        icon.textContent = current === "dark" ? "☀" : "☾";
+      }
+    }
+  };
+
+  applyMode(storedMode || "auto");
+
+  if (modeBtn) {
+    modeBtn.addEventListener("click", () => {
+      const current = root.getAttribute("data-mode") || "auto";
+
+      let next;
+      if (current === "dark") {
+        next = "light";
+      } else {
+        next = "dark";
+      }
+
+      root.setAttribute("data-mode", next);
+      localStorage.setItem("mode", next);
+      applyMode(next);
     });
-  }
+  }  
 
   // -------- Mobile nav --------
   const navToggle = document.querySelector(".nav-toggle");
