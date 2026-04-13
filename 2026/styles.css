@@ -1931,3 +1931,264 @@ details p{ margin: 10px 0 0; }
       padding: 0 16px 16px;
     }
   }
+
+
+/* =========================
+   Contact card with QR
+   ========================= */
+   .contact-card{
+    display: grid;
+    gap: 18px;
+  }
+  
+  .contact-card-top{
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 168px;
+    gap: 18px;
+    align-items: start;
+  }
+  
+  .contact-qr-link{
+    display: grid;
+    gap: 10px;
+    justify-items: center;
+    text-decoration: none;
+  }
+  
+  .contact-qr{
+    width: 148px;
+    height: 148px;
+    padding: 12px;
+    border-radius: 18px;
+    border: 1px solid var(--line);
+    background: color-mix(in srgb, var(--card2) 86%, transparent);
+    color: var(--text);
+    box-shadow: var(--shadow);
+    transition:
+      transform .22s var(--ease),
+      border-color .22s var(--ease),
+      background .22s var(--ease);
+    display: grid;
+    place-items: center;
+  }
+  
+  .contact-qr-link:hover .contact-qr{
+    transform: translateY(-2px);
+    border-color: color-mix(in srgb, var(--brand2) 35%, var(--line));
+    background: color-mix(in srgb, var(--card2) 94%, transparent);
+  }
+  
+  .contact-qr svg{
+    width: 100%;
+    height: 100%;
+    display: block;
+  }
+  
+  .contact-qr-caption{
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--muted);
+  }
+  
+  .contact-meta-grid{
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+  }
+  
+  .contact-meta-block{
+    min-width: 0;
+  }
+  
+  .contact-meta-block h3{
+    margin: 0 0 10px;
+  }
+  
+  .contact-meta-block p{
+    margin: 0 0 10px;
+  }
+  
+  .contact-meta-block a{
+    color: inherit;
+    text-decoration: none;
+  }
+  
+  .contact-meta-block a:hover{
+    text-decoration: underline;
+  }
+  
+  @media (max-width: 780px){
+    .contact-card-top{
+      grid-template-columns: 1fr;
+    }
+  
+    .contact-qr-link{
+      justify-items: start;
+    }
+  
+    .contact-meta-grid{
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .registration-card{
+    padding: clamp(18px, 2vw, 28px);
+    border: 1px solid var(--line);
+    border-radius: calc(var(--radius) + 6px);
+    background:
+      linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02)),
+      linear-gradient(135deg, rgba(124,247,198,.05), rgba(139,183,255,.04)),
+      var(--card);
+    box-shadow: var(--shadow);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    overflow: hidden;
+  }
+  
+  .table-wrap{
+    width: 100%;
+    overflow-x: auto;
+    border-radius: calc(var(--radius) - 2px);
+  }
+  
+  .fee-table{
+    width: 100%;
+    min-width: 720px;
+    border-collapse: separate;
+    border-spacing: 0;
+    color: var(--text);
+    overflow: hidden;
+    border: 1px solid var(--line);
+    border-radius: calc(var(--radius) - 2px);
+    background:
+      linear-gradient(180deg, rgba(255,255,255,.025), rgba(255,255,255,.015));
+  }
+  
+  .fee-table thead th{
+    padding: 18px 18px;
+    text-align: center;
+    font-weight: 700;
+    font-size: 0.98rem;
+    letter-spacing: .02em;
+    color: var(--text);
+    background:
+      linear-gradient(135deg, rgba(124,247,198,.12), rgba(139,183,255,.12)),
+      rgba(255,255,255,.04);
+    border-bottom: 1px solid var(--line);
+    border-right: 1px solid var(--line);
+  }
+  
+  .fee-table thead th:last-child{
+    border-right: 0;
+  }
+  
+  .fee-table tbody td{
+    padding: 18px 18px;
+    border-right: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+    background: rgba(255,255,255,.02);
+    transition: background .2s ease, transform .2s ease;
+  }
+  
+  .fee-table tbody tr:last-child td{
+    border-bottom: 0;
+  }
+  
+  .fee-table tbody td:last-child{
+    border-right: 0;
+  }
+  
+  .fee-table tbody tr:hover td{
+    background: rgba(255,255,255,.045);
+  }
+  
+  .fee-table td[rowspan]{
+    font-weight: 800;
+    font-size: 1.05rem;
+    text-align: center;
+    vertical-align: middle;
+    white-space: nowrap;
+    color: var(--text);
+    background:
+      linear-gradient(180deg, rgba(124,247,198,.08), rgba(139,183,255,.05)),
+      rgba(255,255,255,.03);
+  }
+  
+  .fee-table tbody td:nth-child(1),
+  .fee-table tbody td:nth-child(2){
+    text-align: center;
+    color: var(--text);
+  }
+  
+  .fee-table tbody td:nth-child(3),
+  .fee-table tbody td:nth-child(4){
+    text-align: center;
+    font-weight: 700;
+    font-variant-numeric: tabular-nums;
+    color: var(--text);
+  }
+  
+  .fee-table tbody tr.group-start td{
+    border-top: 1px solid rgba(124,247,198,.22);
+  }
+  
+  .fee-table tbody tr.group-start td[rowspan]{
+    box-shadow: inset 4px 0 0 rgba(124,247,198,.55);
+  }
+  
+  .registration-note{
+    margin-top: 18px;
+    padding: 16px 18px;
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    background:
+      linear-gradient(135deg, rgba(124,247,198,.05), rgba(139,183,255,.04)),
+      rgba(255,255,255,.03);
+    box-shadow: inset 0 1px 0 rgba(255,255,255,.04);
+  }
+  
+  .registration-note p{
+    margin: 0;
+    color: var(--muted);
+    line-height: 1.8;
+  }
+  
+  @media (max-width: 768px){
+    .registration-card{
+      padding: 14px;
+      border-radius: var(--radius);
+    }
+  
+    .fee-table{
+      min-width: 640px;
+    }
+  
+    .fee-table thead th,
+    .fee-table tbody td{
+      padding: 14px 14px;
+      font-size: 0.95rem;
+    }
+  
+    .fee-table td[rowspan]{
+      font-size: 1rem;
+    }
+  
+    .registration-note{
+      margin-top: 14px;
+      padding: 14px;
+    }
+  }
+  .fee-table thead th:nth-child(3),
+.fee-table thead th:nth-child(4),
+.fee-table tbody td:nth-child(3),
+.fee-table tbody td:nth-child(4){
+  width: 16%;
+}
+
+.fee-table thead th:nth-child(1){
+  width: 28%;
+}
+
+.fee-table thead th:nth-child(2){
+  width: 40%;
+}

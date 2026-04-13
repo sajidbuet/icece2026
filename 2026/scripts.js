@@ -376,3 +376,28 @@ Email: ${email || "[Your email]"}`;
   setActive(0);
   startAutoplay();
 })();
+
+// -------- Load inline QR code fragment --------
+(() => {
+  const mount = document.getElementById("contactQrMount");
+  if (!mount) return;
+
+  fetch("qrcode.html")
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error(`Failed to load qrcode.html: ${response.status}`);
+      }
+      return response.text();
+    })
+    .then((svgMarkup) => {
+      mount.innerHTML = svgMarkup;
+    })
+    .catch((error) => {
+      console.error(error);
+      mount.innerHTML = `
+        <span style="font-size:12px; color:var(--muted); text-align:center;">
+          QR unavailable
+        </span>
+      `;
+    });
+})();

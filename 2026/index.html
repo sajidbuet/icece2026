@@ -648,6 +648,19 @@
                   <li>Enter the Conference ID (to be updated soon), email address, and password</li>
                   <li>Complete the remaining prompts</li>
                 </ul>
+                <p><strong>Previous users:</strong></p>
+                <ul class="bullets">
+                  <li>Log in with your username and password</li>
+                  <li>Enter the Conference ID (to be updated soon)</li>
+                  <li>Complete the remaining prompts</li>
+                </ul>
+               <p><strong>Once you login:</strong></p>
+               <ul class="bullets">
+                  <li>Upload the source file that contains your paper for conversion
+                  <li>Receive by email the IEEE Xplore-compatible PDF of your paper
+                  <li>Please along with IEEE PDF eXpress compliant pdf file preserve a copy of the compliance message from PDF eXpress which needs to be uploaded during your registration.</li>
+                </ul> 
+
                 <p class="muted">
                   Please preserve a copy of the PDF eXpress compliance message, as it must be
                   uploaded during registration.
@@ -1047,58 +1060,80 @@
     </section>
 
     <!-- Registration -->
-    <section class="section alt" id="register" data-nav="Register" aria-label="Registration">
-      <div class="container">
-        <div class="section-head reveal">
-          <h2>Registration</h2>
-          <p>
-            Registration information will be published on the official ICECE website.
-          </p>
-        </div>
+<section class="section alt" id="register" data-nav="Register" aria-label="Registration">
+  <div class="container">
+    <div class="section-head reveal">
+      <h2>Registration</h2>
+      <p>
+        Registration fees for authors are listed below. 
+      </p>
+    </div>
 
-        <div class="grid-3">
-          <article class="card reveal">
-            <h3>Student</h3>
-            <p class="price">Fee: To be announced</p>
-            <ul class="bullets">
-              <li>Access to all sessions</li>
-              <li>Proceedings access</li>
-              <li>Student events</li>
-            </ul>
-          </article>
+    <div class="card reveal registration-card">
+      <div class="table-wrap">
 
-          <article class="card reveal">
-            <h3>Regular</h3>
-            <p class="price">Fee: To be announced</p>
-            <ul class="bullets">
-              <li>All sessions + keynotes</li>
-              <li>Proceedings access</li>
-              <li>Networking events</li>
-            </ul>
-          </article>
-
-          <article class="card reveal">
-            <h3>IEEE Member</h3>
-            <p class="price">Fee: To be announced</p>
-            <ul class="bullets">
-              <li>Member rate (where applicable)</li>
-              <li>All sessions access</li>
-              <li>Proceedings access</li>
-            </ul>
-          </article>
-        </div>
-
-        <div class="callout reveal">
-          <div>
-            <h3>Registration portal</h3>
-            <p class="muted">Registration is not open yet.</p>
-          </div>
-          <div class="callout-actions">
-            <a class="btn btn-ghost" href="#contact">Registration questions</a>
-          </div>
-        </div>
+      
+        <table class="fee-table">
+          <thead>
+            <tr>
+              <th>Membership</th>
+              <th>Category</th>
+              <th>BDT</th>
+              <th>USD</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="group-start">
+              <td rowspan="3">IEEE Member</td>
+              <td>Non-student author</td>
+              <td>10,000</td>
+              <td>300</td>
+            </tr>
+            <tr>
+              <td>Student Author</td>
+              <td>7,000</td>
+              <td>200</td>
+            </tr>
+            <tr>
+              <td>Life Member Author</td>
+              <td>7,000</td>
+              <td>200</td>
+            </tr>
+            <tr class="group-start">
+              <td rowspan="2">Non-IEEE Member</td>
+              <td>Non-student author</td>
+              <td>12,000</td>
+              <td>350</td>
+            </tr>
+            <tr>
+              <td>Student Author</td>
+              <td>8,000</td>
+              <td>250</td>
+            </tr>
+          </tbody>
+        </table>
       </div>
-    </section>
+
+      <div class="registration-note">
+        <p>
+          Participant registration fees will follow a similar structure based on category.
+          Each registration covers one accepted paper; a 50% discount applies to a
+          second paper by the same registrant.
+        </p>
+      </div>
+    </div>
+
+    <div class="callout reveal">
+      <div>
+        <h3>Registration portal</h3>
+        <p class="muted">Registration is not open yet.</p>
+      </div>
+      <div class="callout-actions">
+        <a class="btn btn-ghost" href="#contact">Registration questions</a>
+      </div>
+    </div>
+  </div>
+</section>
 
     <!-- Sponsors -->
     <section class="section" id="sponsors" data-nav="Sponsors" aria-label="Sponsors and partners">
@@ -1321,23 +1356,54 @@
             </div>
           </form>
 
-          <aside class="card reveal">
-            <h3>Official ICECE website</h3>
-            <p class="muted">
-              For the latest announcements and official updates, please visit the ICECE website.
-            </p>
-            <a class="btn btn-ghost" href="https://icece.org.bd/" target="_blank" rel="noreferrer noopener">
-              Open icece.buet.ac.bd
-            </a>
+<aside class="card reveal contact-card">
+  <div class="contact-card-top">
+    <div>
+      <h3>Official ICECE website</h3>
+      <p class="muted">
+        For the latest announcements and official updates, please visit the ICECE website.
+      </p>
+    </div>
 
-            <hr class="sep" />
+    <a
+      class="contact-qr-link"
+      href="https://icece.org.bd/"
+      target="_blank"
+      rel="noreferrer noopener"
+      aria-label="Open ICECE website"
+      title="Open ICECE website"
+    >
+      <div
+        class="contact-qr"
+        id="contactQrMount"
+        aria-hidden="true"
+      ></div>
+      <span class="contact-qr-caption">Scan to visit</span>
+    </a>
+  </div>
 
-            <h3>Contact email</h3>
-            <p class="muted">icecetech@eee.buet.ac.bd</p>
-            <p class="muted">iceceorg@eee.buet.ac.bd</p>
-            <h3>Phone Number</h3>
-            <p class="muted">+88 0255155048</p>
-          </aside>
+  <hr class="sep" />
+
+  <div class="contact-meta-grid">
+    <div class="contact-meta-block">
+      <h3>Contact email</h3>
+      <p class="muted">
+        <a href="mailto:icecetech@eee.buet.ac.bd">icecetech@eee.buet.ac.bd</a>
+      </p>
+      <p class="muted">
+        <a href="mailto:iceceorg@eee.buet.ac.bd">iceceorg@eee.buet.ac.bd</a>
+      </p>
+    </div>
+
+    <div class="contact-meta-block">
+      <h3>Phone Number</h3>
+      <p class="muted">
+        <a href="tel:+880255155048">+88 0255155048</a>
+      </p>
+    </div>
+  </div>
+</aside>
+
         </div>
       </div>
     </section>
