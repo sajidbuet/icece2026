@@ -53,22 +53,92 @@
   }  
 
   // -------- Mobile nav --------
-  const navToggle = document.querySelector(".nav-toggle");
-  const navLinks = document.getElementById("navLinks");
-  if (navToggle && navLinks) {
-    navToggle.addEventListener("click", () => {
-      const open = navLinks.classList.toggle("open");
-      navToggle.setAttribute("aria-expanded", open ? "true" : "false");
-    });
-
-    // close after click
-    navLinks.addEventListener("click", (e) => {
-      const a = e.target.closest("a");
-      if (!a) return;
-      navLinks.classList.remove("open");
-      navToggle.setAttribute("aria-expanded", "false");
-    });
-  }
+  // -------- Mobile nav --------
+    // -------- Mobile nav --------
+    const navToggle = document.querySelector(".nav-toggle");
+    const navPanel = document.getElementById("navPanel");
+    const navLinks = document.getElementById("navLinks");
+    const navToggleIcon = navToggle ? navToggle.querySelector("span[aria-hidden='true']") : null;
+  
+    if (navToggle && navPanel && navLinks) {
+      const isMobileNav = () => window.innerWidth <= 980;
+  
+      const syncToggleUI = (open) => {
+        navToggle.setAttribute("aria-expanded", open ? "true" : "false");
+        navToggle.setAttribute("aria-label", open ? "Close menu" : "Open menu");
+        navToggle.setAttribute("title", open ? "Close menu" : "Open menu");
+  
+        if (navToggleIcon) {
+          navToggleIcon.textContent = open ? "✕" : "☰";
+        }
+  
+        document.body.classList.toggle("menu-open", open);
+      };
+  
+      const openNav = () => {
+        if (!isMobileNav()) return;
+        navPanel.classList.add("open");
+        syncToggleUI(true);
+      };
+  
+      const closeNav = () => {
+        navPanel.classList.remove("open");
+        syncToggleUI(false);
+      };
+  
+      const toggleNav = () => {
+        if (!isMobileNav()) return;
+        const isOpen = navPanel.classList.contains("open");
+        if (isOpen) {
+          closeNav();
+        } else {
+          openNav();
+        }
+      };
+  
+      syncToggleUI(false);
+  
+      navToggle.addEventListener("click", (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        toggleNav();
+      });
+  
+      navPanel.addEventListener("click", (e) => {
+        e.stopPropagation();
+  
+        const link = e.target.closest("a");
+        if (link && isMobileNav()) {
+          closeNav();
+        }
+      });
+  
+      document.addEventListener("click", (e) => {
+        if (!isMobileNav()) return;
+        if (!navPanel.classList.contains("open")) return;
+  
+        const clickedInsidePanel = navPanel.contains(e.target);
+        const clickedToggle = navToggle.contains(e.target);
+  
+        if (!clickedInsidePanel && !clickedToggle) {
+          closeNav();
+        }
+      });
+  
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape") {
+          closeNav();
+        }
+      });
+  
+      window.addEventListener("resize", () => {
+        if (!isMobileNav()) {
+          closeNav();
+        } else {
+          syncToggleUI(navPanel.classList.contains("open"));
+        }
+      });
+    }
 
   // -------- Back to top --------
   const toTopBtn = document.querySelector("[data-to-top]");
@@ -400,4 +470,33 @@ Email: ${email || "[Your email]"}`;
         </span>
       `;
     });
+})();
+
+// Remove quick links whose section does not exist
+(() => {
+  document.querySelectorAll('.quick-links a[href^="#"]').forEach((a) => {
+    const target = document.querySelector(a.getAttribute('href'));
+    if (!target) a.closest('li')?.remove();
+  });
+})();
+
+// -------- Hero lead rotating highlight --------
+(() => {
+  const rotator = document.querySelector(".hero-rotator");
+  if (!rotator) return;
+
+  const words = Array.from(rotator.querySelectorAll(".hero-rotator-word"));
+  if (words.length < 2) return;
+
+  const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if (reduceMotion) return;
+
+  let index = words.findIndex((word) => word.classList.contains("is-active"));
+  if (index < 0) index = 0;
+
+  setInterval(() => {
+    words[index].classList.remove("is-active");
+    index = (index + 1) % words.length;
+    words[index].classList.add("is-active");
+  }, 2200);
 })();

@@ -30,30 +30,61 @@
 
   <!-- Locked banner -->
   <header class="site-header" id="top">
-    <div class="container header-inner">
-      <a class="brand" href="#home" aria-label="ICECE 2026 home">
-        
-        
-
-        <span class="brand-text">
-          <span class="brand-title-row">
-            <span class="brand-title">ICECE 2026</span>
-            <span class="brand-date">December 10 – 12, 2026</span>
-          </span>
-          <span class="brand-location">BUET · Dhaka · Bangladesh</span>
+  <div class="container header-inner">
+    <a class="brand" href="#home" aria-label="ICECE 2026 home">
+      <span class="brand-text">
+        <span class="brand-title-row">
+          <span class="brand-title">ICECE 2026</span>
+          <span class="brand-date">December 10 – 12, 2026</span>
         </span>
-      </a>
+        <span class="brand-location">BUET · Dhaka · Bangladesh</span>
+      </span>
+    </a>
 
-      <nav class="nav" aria-label="Primary">
-        <button class="nav-toggle" type="button" aria-label="Toggle menu" aria-expanded="false" aria-controls="navLinks">
-          <span aria-hidden="true">☰</span>
-        </button>
+    <nav class="nav" aria-label="Primary">
+      <button
+        class="nav-toggle"
+        type="button"
+        aria-label="Toggle menu"
+        aria-expanded="false"
+        aria-controls="navPanel"
+      >
+        <span aria-hidden="true">☰</span>
+      </button>
 
-        <!-- Nav links are generated from sections that exist in the page.
-             If you comment out an entire section, it will not appear in the nav. -->
+      <div class="nav-panel" id="navPanel">
         <div class="nav-links" id="navLinks"></div>
 
-        <noscript>
+        <div class="nav-extra">
+          <button
+            class="mode-toggle"
+            type="button"
+            data-mode-toggle
+            aria-label="Toggle color mode"
+            title="Toggle light and dark mode"
+          >
+            <span class="mode-icon" aria-hidden="true">◐</span>
+          </button>
+
+          <button
+            class="announcement-reopen"
+            type="button"
+            id="announcementReopen"
+            aria-label="Show announcements"
+            aria-controls="announcementBar"
+            aria-expanded="false"
+            title="Show announcements"
+            hidden
+          >
+            <span class="announcement-reopen-icon" aria-hidden="true">📣</span>
+          </button>
+
+          <a class="btn btn-primary btn-compact nav-submit" href="#submit">Submit</a>
+        </div>
+      </div>
+
+      <noscript>
+        <div class="nav-panel is-static">
           <div class="nav-links">
             <a href="#about">About</a>
             <a href="#cfp">CFP</a>
@@ -66,53 +97,25 @@
             <a href="#committee">Committee</a>
             <a href="#faq">FAQ</a>
           </div>
-        </noscript>
-      </nav>
-
-      <div class="header-actions">
-<button
-  class="mode-toggle"
-  type="button"
-  data-mode-toggle
-  aria-label="Toggle color mode"
-  title="Toggle light and dark mode"
->
-  <span class="mode-icon" aria-hidden="true">◐</span>
-        
-
-        <button
-    class="announcement-reopen"
-    type="button"
-    id="announcementReopen"
-    aria-label="Show announcements"
-    aria-controls="announcementBar"
-    aria-expanded="false"
-    title="Show announcements"
-    hidden
-  >
-    <span class="announcement-reopen-icon" aria-hidden="true">📣</span>
-  </button>
-    
-    
-        <a class="btn btn-primary btn-compact" href="#submit">Submit</a>
-      </div>
-    </div>
-
-    <div class="scroll-progress" aria-hidden="true"><span></span></div>
-
-    <div class="announcement-bar" id="announcementBar" hidden aria-live="polite" aria-atomic="true">
-      <div class="container announcement-inner">
-        <span class="announcement-label">Notice</span>
-        <div class="announcement-viewport">
-          <div class="announcement-track" id="announcementTrack">
-            <span class="announcement-text" id="announcementText"></span>
-          </div>
         </div>
-        <button class="announcement-close" type="button" id="announcementClose" aria-label="Dismiss announcement">×</button>
-      </div>
-    </div>
+      </noscript>
+    </nav>
+  </div>
 
-  </header>
+  <div class="scroll-progress" aria-hidden="true"><span></span></div>
+
+  <div class="announcement-bar" id="announcementBar" hidden aria-live="polite" aria-atomic="true">
+    <div class="container announcement-inner">
+      <span class="announcement-label">Notice</span>
+      <div class="announcement-viewport">
+        <div class="announcement-track" id="announcementTrack">
+          <span class="announcement-text" id="announcementText"></span>
+        </div>
+      </div>
+      <button class="announcement-close" type="button" id="announcementClose" aria-label="Dismiss announcement">×</button>
+    </div>
+  </div>
+</header>
 
   <main id="main">
     <!-- Hero -->
@@ -133,10 +136,21 @@
 
       <h1>ICECE 2026</h1>
 
-      <p class="hero-lead">
-        The pioneering international conference for 
-        researchers, practitioners, and industry leaders in Electrical &amp; Computer Engineering.
-      </p>
+<p class="hero-lead hero-lead--fancy">
+  <span class="hero-lead-kicker">
+    Celebrating <strong>25 years</strong> of ICECE.
+  </span>
+
+  <span class="hero-lead-main">
+    A pioneering international forum for
+    <span class="hero-rotator" aria-live="polite" aria-atomic="true">
+      <span class="hero-rotator-word is-active">researchers</span>
+      <span class="hero-rotator-word">practitioners</span>
+      <span class="hero-rotator-word">industry leaders</span>
+    </span>
+    in Electrical &amp; Computer Engineering.
+  </span>
+</p>
 
       <div class="hero-meta">
         <div class="meta-card">
@@ -167,39 +181,61 @@
         <li><a href="#register">Registration</a></li>
       </ul>
 
-      <div class="panel-logo-block">
-        <div class="panel-subcard">
-          <p class="panel-label">Organized by</p>
-          <div class="hero-org-logos hero-org-logos--swap">
-            <img
-              class="logo-light"
-              src="assets/logos/buet-eee.svg"
-              alt="BUET and Department of Electrical and Electronic Engineering"
-            />
-            <img
-              class="logo-dark"
-              src="assets/logos/buet-eee-white.svg"
-              alt="BUET and Department of Electrical and Electronic Engineering"
-            />
-          </div>
-        </div>
+<div class="panel-logo-block">
+  <div class="panel-subcard">
+    <p class="panel-label">Organized by</p>
 
-        <div class="panel-subcard">
-          <p class="panel-label">Technical Cosponsored by</p>
-<div class="hero-org-logos hero-org-logos--swap">
-  <img
-    class="logo-light"
-    src="assets/logos/ieee-bd-section.png"
-    alt="IEEE Bangladesh Section"
-  />
-  <img
-    class="logo-dark"
-    src="assets/logos/ieee-bd-section-white.png"
-    alt="IEEE Bangladesh Section"
-  />
-</div>
-        </div>
+    <a
+      class="hero-logo-link"
+      href="https://eee.buet.ac.bd/"
+      target="_blank"
+      rel="noreferrer noopener"
+      aria-label="Visit Department of Electrical and Electronic Engineering, BUET"
+      title="Department of EEE, BUET"
+    >
+      <div class="hero-org-logos hero-org-logos--swap">
+        <img
+          class="logo-light"
+          src="assets/logos/buet-eee.svg"
+          alt=""
+        />
+        <img
+          class="logo-dark"
+          src="assets/logos/buet-eee-white.svg"
+          alt=""
+        />
       </div>
+    </a>
+  </div>
+
+  <div class="panel-subcard">
+    <p class="panel-label">Technical Cosponsored by</p>
+
+    <a
+      class="hero-logo-link"
+      href="https://www.ieeebd.com/"
+      target="_blank"
+      rel="noreferrer noopener"
+      aria-label="Visit IEEE Bangladesh Section"
+      title="IEEE Bangladesh Section"
+    >
+      <div class="hero-org-logos hero-org-logos--swap">
+        <img
+          class="logo-light"
+          src="assets/logos/ieee-bd-section.png"
+          alt=""
+        />
+        <img
+          class="logo-dark"
+          src="assets/logos/ieee-bd-section-white.png"
+          alt=""
+        />
+      </div>
+    </a>
+  </div>
+</div>
+
+
     </aside>
   </div>
 
@@ -1078,8 +1114,8 @@
             <tr>
               <th>Membership</th>
               <th>Category</th>
-              <th>BDT</th>
-              <th>USD</th>
+              <th>Local (BDT)</th>
+              <th>Foreign (USD)</th>
             </tr>
           </thead>
           <tbody>

@@ -4,14 +4,20 @@
   class="contact-qr-svg"
   aria-hidden="true"
 >
-  <style>
-    .qr-fill { fill: currentColor; }
-  </style>
+  <defs>
+    <linearGradient id="qrLogoGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="color-mix(in srgb, var(--brand) 82%, #fff 18%)" />
+      <stop offset="100%" stop-color="var(--brand2)" />
+    </linearGradient>
+  </defs>
+
 
 <style type="text/css">
 	.st0{fill:none;}
 	
-    .st1{fill:var(--brand);}
+    .st1{fill:url(#qrLogoGrad);
+    
+    }
     .qrdark{fill:var(--text);}
 </style>
 <g transform="translate(315,0) scale(0.07,0.07)">
