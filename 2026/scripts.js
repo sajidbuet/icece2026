@@ -600,3 +600,104 @@ Email: ${email || "[Your email]"}`;
   }, 2200);
 })();
 
+
+// -------- Open accordion from anchor links and scroll with header offset --------
+(() => {
+  const getHeaderOffset = () => {
+    const header = document.querySelector(".site-header");
+    const announcementBar = document.getElementById("announcementBar");
+
+    let offset = 16;
+    if (header) offset += header.offsetHeight;
+    if (announcementBar && !announcementBar.hidden) offset += announcementBar.offsetHeight;
+
+    return offset;
+  };
+
+  const scrollToWithOffset = (element) => {
+    if (!element) return;
+
+    const top = element.getBoundingClientRect().top + window.pageYOffset - getHeaderOffset();
+    window.scrollTo({
+      top: Math.max(0, top),
+      behavior: "smooth"
+    });
+  };
+
+  const openTargetAccordion = (target) => {
+    if (!target) return false;
+
+    // Direct target is a <details>
+    if (target.matches("details")) {
+      target.open = true;
+      return true;
+    }
+
+    // Target is inside a <details>
+    const parentDetails = target.closest("details");
+    if (parentDetails) {
+      parentDetails.open = true;
+      return true;
+    }
+
+    return false;
+  };
+
+  const handleHashNavigation = (hash, smooth = true) => {
+    if (!hash || hash === "#") return;
+
+    const target = document.querySelector(hash);
+    if (!target) return;
+
+    // If target is or is inside an accordion, open it first
+    openTargetAccordion(target);
+
+    // If target is a summary, open its parent details and scroll to summary
+    const scrollTarget = target.matches("summary")
+      ? target
+      : target.matches("details")
+        ? target.querySelector("summary") || target
+        : target;
+
+    // Wait a frame so <details> expands before measuring position
+    requestAnimationFrame(() => {
+      if (smooth) {
+        scrollToWithOffset(scrollTarget);
+      } else {
+        const top = scrollTarget.getBoundingClientRect().top + window.pageYOffset - getHeaderOffset();
+        window.scrollTo(0, Math.max(0, top));
+      }
+    });
+  };
+
+  // Intercept in-page anchor clicks
+  document.addEventListener("click", (e) => {
+    const link = e.target.closest('a[href^="#"]');
+    if (!link) return;
+
+    const hash = link.getAttribute("href");
+    if (!hash || hash === "#") return;
+
+    const target = document.querySelector(hash);
+    if (!target) return;
+
+    e.preventDefault();
+
+    // Update URL hash without default jump
+    history.pushState(null, "", hash);
+
+    handleHashNavigation(hash, true);
+  });
+
+  // Handle page load with a hash
+  window.addEventListener("load", () => {
+    if (window.location.hash) {
+      handleHashNavigation(window.location.hash, false);
+    }
+  });
+
+  // Handle back/forward hash changes
+  window.addEventListener("hashchange", () => {
+    handleHashNavigation(window.location.hash, true);
+  });
+})();
