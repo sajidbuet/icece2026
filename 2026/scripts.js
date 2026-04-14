@@ -52,94 +52,193 @@
     });
   }  
 
-  // -------- Mobile nav --------
-  // -------- Mobile nav --------
-    // -------- Mobile nav --------
+  function initMobileMenu() {
+    const nav = document.querySelector(".nav");
     const navToggle = document.querySelector(".nav-toggle");
     const navPanel = document.getElementById("navPanel");
     const navLinks = document.getElementById("navLinks");
-    const navToggleIcon = navToggle ? navToggle.querySelector("span[aria-hidden='true']") : null;
+    const brand = document.querySelector(".site-header .brand");
+    const modeToggle = navPanel?.querySelector(".mode-toggle");
+    const announcementBtn = navPanel?.querySelector(".announcement-reopen");
+    const navSubmit = navPanel?.querySelector(".nav-submit");
   
-    if (navToggle && navPanel && navLinks) {
-      const isMobileNav = () => window.innerWidth <= 980;
+    if (!nav || !navToggle || !navPanel || !navLinks || !brand) return;
   
-      const syncToggleUI = (open) => {
-        navToggle.setAttribute("aria-expanded", open ? "true" : "false");
-        navToggle.setAttribute("aria-label", open ? "Close menu" : "Open menu");
-        navToggle.setAttribute("title", open ? "Close menu" : "Open menu");
+    const MOBILE_BREAKPOINT = 980;
+    const isMobile = () => window.innerWidth <= MOBILE_BREAKPOINT;
   
-        if (navToggleIcon) {
-          navToggleIcon.textContent = open ? "✕" : "☰";
-        }
+    const originalParent = navPanel.parentNode;
+    const originalNextSibling = navPanel.nextSibling;
+    const originalNavExtraParent = navPanel.querySelector(".nav-extra");
   
-        document.body.classList.toggle("menu-open", open);
-      };
-  
-      const openNav = () => {
-        if (!isMobileNav()) return;
-        navPanel.classList.add("open");
-        syncToggleUI(true);
-      };
-  
-      const closeNav = () => {
-        navPanel.classList.remove("open");
-        syncToggleUI(false);
-      };
-  
-      const toggleNav = () => {
-        if (!isMobileNav()) return;
-        const isOpen = navPanel.classList.contains("open");
-        if (isOpen) {
-          closeNav();
-        } else {
-          openNav();
-        }
-      };
-  
-      syncToggleUI(false);
-  
-      navToggle.addEventListener("click", (e) => {
-        e.preventDefault();
-        e.stopPropagation();
-        toggleNav();
-      });
-  
-      navPanel.addEventListener("click", (e) => {
-        e.stopPropagation();
-  
-        const link = e.target.closest("a");
-        if (link && isMobileNav()) {
-          closeNav();
-        }
-      });
-  
-      document.addEventListener("click", (e) => {
-        if (!isMobileNav()) return;
-        if (!navPanel.classList.contains("open")) return;
-  
-        const clickedInsidePanel = navPanel.contains(e.target);
-        const clickedToggle = navToggle.contains(e.target);
-  
-        if (!clickedInsidePanel && !clickedToggle) {
-          closeNav();
-        }
-      });
-  
-      document.addEventListener("keydown", (e) => {
-        if (e.key === "Escape") {
-          closeNav();
-        }
-      });
-  
-      window.addEventListener("resize", () => {
-        if (!isMobileNav()) {
-          closeNav();
-        } else {
-          syncToggleUI(navPanel.classList.contains("open"));
-        }
-      });
+    let panelHead = navPanel.querySelector(".nav-panel-head");
+    if (!panelHead) {
+      panelHead = document.createElement("div");
+      panelHead.className = "nav-panel-head";
+      navPanel.prepend(panelHead);
     }
-
+  
+    let closeBtn = navPanel.querySelector(".nav-panel-close");
+    if (!closeBtn) {
+      closeBtn = document.createElement("button");
+      closeBtn.type = "button";
+      closeBtn.className = "nav-panel-close";
+      closeBtn.setAttribute("aria-label", "Close menu");
+      closeBtn.setAttribute("title", "Close menu");
+      closeBtn.innerHTML = '<span aria-hidden="true">✕</span>';
+    }
+  
+    let panelBrand = navPanel.querySelector(".nav-panel-brand");
+    if (!panelBrand) {
+      panelBrand = brand.cloneNode(true);
+      panelBrand.classList.add("nav-panel-brand");
+    }
+  
+    let panelControls = navPanel.querySelector(".nav-panel-controls");
+    if (!panelControls) {
+      panelControls = document.createElement("div");
+      panelControls.className = "nav-panel-controls";
+    }
+  
+    const toggleIcon = navToggle.querySelector("span[aria-hidden='true']");
+  
+    function mountMobileHeader() {
+      panelHead.innerHTML = "";
+  
+      if (!panelBrand.isConnected) {
+        panelHead.appendChild(panelBrand);
+      } else {
+        panelHead.appendChild(panelBrand);
+      }
+  
+      panelControls.innerHTML = "";
+  
+      if (modeToggle) panelControls.appendChild(modeToggle);
+      if (announcementBtn) panelControls.appendChild(announcementBtn);
+      panelControls.appendChild(closeBtn);
+  
+      panelHead.appendChild(panelControls);
+    }
+  
+    function restoreDesktopControls() {
+      if (!originalNavExtraParent) return;
+  
+      if (modeToggle) originalNavExtraParent.prepend(modeToggle);
+      if (announcementBtn) {
+        if (navSubmit && navSubmit.parentNode === originalNavExtraParent) {
+          originalNavExtraParent.insertBefore(announcementBtn, navSubmit);
+        } else {
+          originalNavExtraParent.appendChild(announcementBtn);
+        }
+      }
+  
+      if (closeBtn.parentNode) closeBtn.parentNode.removeChild(closeBtn);
+    }
+  
+    function movePanelToBody() {
+      if (navPanel.parentNode !== document.body) {
+        document.body.appendChild(navPanel);
+      }
+      mountMobileHeader();
+    }
+  
+    function movePanelBack() {
+      restoreDesktopControls();
+  
+      if (navPanel.parentNode === originalParent) return;
+  
+      if (originalNextSibling && originalNextSibling.parentNode === originalParent) {
+        originalParent.insertBefore(navPanel, originalNextSibling);
+      } else {
+        originalParent.appendChild(navPanel);
+      }
+    }
+  
+    function syncUI(isOpen) {
+      navToggle.setAttribute("aria-expanded", String(isOpen));
+      navToggle.setAttribute("aria-label", isOpen ? "Close menu" : "Open menu");
+      navToggle.setAttribute("title", isOpen ? "Close menu" : "Open menu");
+      document.body.classList.toggle("menu-open", isOpen);
+  
+      if (toggleIcon) {
+        toggleIcon.textContent = isOpen ? "✕" : "☰";
+      }
+    }
+  
+    function openMenu() {
+      if (!isMobile()) return;
+      movePanelToBody();
+      navPanel.classList.add("open");
+      syncUI(true);
+    }
+  
+    function closeMenu() {
+      navPanel.classList.remove("open");
+      syncUI(false);
+  
+      if (!isMobile()) {
+        movePanelBack();
+      }
+    }
+  
+    function toggleMenu() {
+      if (!isMobile()) return;
+      navPanel.classList.contains("open") ? closeMenu() : openMenu();
+    }
+  
+    function handleResize() {
+      if (isMobile()) {
+        movePanelToBody();
+      } else {
+        closeMenu();
+        movePanelBack();
+      }
+    }
+  
+    navToggle.addEventListener("click", (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      toggleMenu();
+    });
+  
+    closeBtn.addEventListener("click", (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      closeMenu();
+    });
+  
+    navPanel.addEventListener("click", (e) => {
+      const link = e.target.closest("a");
+      if (link && isMobile()) {
+        closeMenu();
+      }
+    });
+  
+    document.addEventListener("click", (e) => {
+      if (!isMobile()) return;
+      if (!navPanel.classList.contains("open")) return;
+  
+      const clickedInsidePanel = navPanel.contains(e.target);
+      const clickedToggle = navToggle.contains(e.target);
+  
+      if (!clickedInsidePanel && !clickedToggle) {
+        closeMenu();
+      }
+    });
+  
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") {
+        closeMenu();
+      }
+    });
+  
+    window.addEventListener("resize", handleResize);
+  
+    handleResize();
+    syncUI(false);
+  }
+  
+  initMobileMenu();
   // -------- Back to top --------
   const toTopBtn = document.querySelector("[data-to-top]");
   const onScrollTop = () => {
@@ -500,3 +599,4 @@ Email: ${email || "[Your email]"}`;
     words[index].classList.add("is-active");
   }, 2200);
 })();
+
