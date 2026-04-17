@@ -284,29 +284,60 @@
     document.querySelectorAll(".reveal").forEach((el) => el.classList.add("in"));
   }
 
-  // -------- Scroll spy --------
-  const sections = [...document.querySelectorAll("main section[id]")];
-  const navAnchors = [...document.querySelectorAll(".nav-links a[href^='#']")];
+// -------- Scroll spy --------
+const sections = [...document.querySelectorAll("main section[data-nav][id]")];
+const navAnchors = [...document.querySelectorAll(".nav-links a[href^='#']")];
 
-  const setActive = (id) => {
-    navAnchors.forEach((a) => {
-      const match = a.getAttribute("href") === `#${id}`;
-      a.classList.toggle("active", match);
-    });
-  };
+const getSpyOffset = () => {
+  const header = document.querySelector(".site-header");
+  const announcementBar = document.getElementById("announcementBar");
 
-  const spy = () => {
-    const y = window.scrollY + 120; // header offset
-    let current = sections[0]?.id || "home";
-    for (const sec of sections) {
-      const top = sec.offsetTop;
-      if (top <= y) current = sec.id;
+  let offset = 12;
+  if (header) offset += header.offsetHeight;
+  if (announcementBar && !announcementBar.hidden) offset += announcementBar.offsetHeight;
+
+  return offset;
+};
+
+const setActive = (id) => {
+  navAnchors.forEach((a) => {
+    const match = a.getAttribute("href") === `#${id}`;
+    a.classList.toggle("active", match);
+  });
+};
+
+const spy = () => {
+  if (!sections.length) return;
+
+  const offset = getSpyOffset();
+  const probeY = offset + 8;
+
+  let current = sections[0].id;
+
+  for (const sec of sections) {
+    const rect = sec.getBoundingClientRect();
+
+    if (rect.top <= probeY) {
+      current = sec.id;
     }
-    setActive(current);
-  };
+  }
 
-  window.addEventListener("scroll", spy, { passive: true });
-  spy();
+  // If the last section is near viewport top, keep it active reliably
+  for (const sec of sections) {
+    const rect = sec.getBoundingClientRect();
+    if (rect.top <= probeY && rect.bottom > probeY) {
+      current = sec.id;
+      break;
+    }
+  }
+
+  setActive(current);
+};
+
+window.addEventListener("scroll", spy, { passive: true });
+window.addEventListener("resize", spy);
+window.addEventListener("load", spy);
+spy();
 
   // -------- Tabs (Program) --------
   const tabsRoot = document.querySelector("[data-tabs]");
