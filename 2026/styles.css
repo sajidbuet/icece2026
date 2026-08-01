@@ -4395,3 +4395,68 @@ iframe{
       font-size: .72rem;
     }
   }
+
+  .deadline-update {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.35rem;
+  text-align: right;
+}
+
+.deadline-old {
+  color: #8a8d94;
+  font-size: 0.9rem;
+  text-decoration-color: #dc3545;
+  text-decoration-thickness: 2px;
+}
+
+.deadline-current {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+}
+
+.deadline-new {
+  color: #087f8c;
+  font-size: 1.05rem;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.deadline-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.28rem 0.65rem;
+  border: 1px solid rgba(8, 127, 140, 0.25);
+  border-radius: 999px;
+  background: linear-gradient(
+    135deg,
+    rgba(0, 174, 156, 0.12),
+    rgba(55, 105, 210, 0.1)
+  );
+  color: #087f8c;
+  font-size: 0.73rem;
+  font-weight: 700;
+  letter-spacing: 0.025em;
+  line-height: 1.2;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+@media (max-width: 650px) {
+  .t-top {
+    align-items: flex-start;
+  }
+
+  .deadline-update {
+    align-items: flex-start;
+    text-align: left;
+  }
+
+  .deadline-current {
+    justify-content: flex-start;
+  }
+}

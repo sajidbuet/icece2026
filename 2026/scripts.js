@@ -371,9 +371,7 @@ spy();
 
   const announcementVersion = "2026-general-v1";
   const announcements = [
-    "The paper submission portal is now open.",
-    "Please use the official IEEE conference paper template before submission.",
-    "Review the Important Dates section for submission, notification, and registration deadlines."
+    "The paper submission deadline is extended.",
   ];
 
   if (announcementBar && announcementText && announcementTrack && announcementClose && announcementReopen && announcements.length) {
