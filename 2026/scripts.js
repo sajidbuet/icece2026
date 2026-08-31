@@ -371,7 +371,7 @@ spy();
 
   const announcementVersion = "2026-general-v1";
   const announcements = [
-    "The paper submission deadline is extended.",
+    "The paper submission deadline is extended till September 15th (Final Extension).",
   ];
 
   if (announcementBar && announcementText && announcementTrack && announcementClose && announcementReopen && announcements.length) {
