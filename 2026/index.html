@@ -815,7 +815,7 @@
 </section>
 
 <!-- Paper Submission -->
-<section class="section" id="submit" data-nav="Submit" aria-label="Paper submission">
+<section class="section" data-nav-group="more" id="submit" data-nav="Submit" aria-label="Paper submission">
   <div class="container">
     <div class="section-head reveal">
       <h2>Paper Submission</h2>
@@ -846,38 +846,39 @@
 
 
 <!-- Speakers (optional section — if you comment this out, nav will auto-hide it) -->
-<!--
 <section class="section alt" id="speakers" data-nav="Speakers" aria-label="Keynote and invited speakers">
   <div class="container">
     <div class="section-head reveal">
-      <h2>Keynote &amp; Invited Speakers</h2>
-      <p>ICECE 2026 will feature distinguished keynote and invited speakers from academia and industry.</p>
+      <h2>Keynote &amp; Plenary Speakers</h2>
+      <p>ICECE 2026 will feature distinguished keynote and plenary speakers from academia and industry. Speakers will be announced soon.</p>
     </div>
 
+    <p class="reveal"><strong>Speakers to be announced.</strong></p>
+    <!-- Speaker cards (hidden until speakers are confirmed)
     <div class="grid-3 speaker-grid">
 
       <article class="card speaker-card reveal">
         <div class="speaker-card__top">
           <div class="speaker-card__badge">Keynote</div>
-          <img class="speaker-card__photo" src="assets/speakers/johndoe.jpg" alt="Prof. John Doe">
+          <img class="speaker-card__photo" src="assets/speakers/johndoe.jpg" alt="Keynote Speaker">
         </div>
         <div class="speaker-card__body">
-          <h3 class="speaker-card__name">Prof. John Doe</h3>
-          <p class="speaker-card__affiliation">Massachusetts Institute of Technology (MIT), USA</p>
+          <h3 class="speaker-card__name">Keynote Speaker</h3>
+          <p class="speaker-card__affiliation">To be announced</p>
           <div class="speaker-card__talk">
             <span class="speaker-card__talk-label">Talk</span>
-            <p class="speaker-card__talk-title">Artificial Intelligence for Next-Generation Cyber-Physical Systems</p>
+            <p class="speaker-card__talk-title">To be announced</p>
           </div>
         </div>
       </article>
 
       <article class="card speaker-card reveal">
         <div class="speaker-card__top">
-          <div class="speaker-card__badge">Invited</div>
-          <img class="speaker-card__photo" src="assets/speakers/johndoe.jpg" alt="Invited Speaker">
+          <div class="speaker-card__badge">Keynote</div>
+          <img class="speaker-card__photo" src="assets/speakers/johndoe.jpg" alt="Keynote Speaker">
         </div>
         <div class="speaker-card__body">
-          <h3 class="speaker-card__name">Invited Speaker</h3>
+          <h3 class="speaker-card__name">Keynote Speaker</h3>
           <p class="speaker-card__affiliation">To be announced</p>
           <div class="speaker-card__talk">
             <span class="speaker-card__talk-label">Talk</span>
@@ -902,10 +903,10 @@
       </article>
 
     </div>
+    -->
   </div>
 </section>
 
--->
 
 <!-- Important Dates -->
 <section class="section" id="dates" data-nav="Dates" aria-label="Important dates">
@@ -1013,17 +1014,18 @@
 </section>
 
     <!-- Program / Schedule -->
-    <!--
     <section class="section alt" id="program" data-nav="Program" aria-label="Program schedule">
       <div class="container">
         <div class="section-head reveal">
-          <h2>Program at a glance</h2>
+          <h2>Technical Program</h2>
           <p>
-            ICECE 2026 will feature keynote talks, parallel technical sessions, poster presentations, and networking events.
-            The detailed program will be published closer to the conference.
+            ICECE 2026 will feature keynote and plenary talks, parallel technical sessions, poster presentations, and networking events.
+            The detailed technical program will be published closer to the conference.
           </p>
         </div>
 
+        <p class="reveal"><strong>Program to be announced.</strong></p>
+        <!-- Placeholder schedule (hidden until the program is final)
         <div class="tabs reveal" data-tabs>
           <div class="tablist" role="tablist" aria-label="Schedule days">
 
@@ -1072,9 +1074,9 @@
             </div>
           </div>
         </div>
+        -->
       </div>
     </section>
--->
     <!-- Venue -->
     <section class="section" id="venue" data-nav="Venue" aria-label="Venue and travel">
       <div class="container">
@@ -1206,7 +1208,7 @@
 </section>
 
 <!-- Student Project Competition -->
-<section class="section" id="student-project-competition" data-nav="Project Competition" aria-label="Student project showcasing and competition">
+<section class="section" id="student-project-competition" data-nav="Competition" aria-label="Student project showcasing and competition">
   <div class="container">
     <div class="section-head reveal">
       <h2>Student Project Showcasing and Competition</h2>
@@ -1230,7 +1232,7 @@
   </div>
 </section>
 
-<section class="section" id="sponsors" data-nav="Sponsors" aria-label="Sponsors and partners">
+<section class="section" data-nav-group="more" id="sponsors" data-nav="Sponsors" aria-label="Sponsors and partners">
   <div class="container">
     <div class="section-head reveal">
       <h2>Sponsors &amp; Partners</h2>
@@ -1468,7 +1470,7 @@
   </div>
 </section>
 <!-- Committee -->
-<section class="section alt" id="committee" data-nav="Committee" aria-label="Conference committees">
+<section class="section alt" data-nav-group="more" id="committee" data-nav="Committee" aria-label="Conference committees">
   <div class="container">
     <div class="section-head reveal">
       <h2>Conference Committees</h2>
@@ -1570,7 +1572,7 @@
       </div>
     </section>
 -->
-    <section class="section" id="prevconf" data-nav="Previous" aria-label="Previous Conferences">
+    <section class="section" data-nav-group="more" id="prevconf" data-nav="Previous" aria-label="Previous Conferences">
   <div class="container">
     <div class="section-head reveal">
       <h2>Previous Conferences</h2>
@@ -1763,13 +1765,36 @@
       const sections = Array.from(document.querySelectorAll("main section[data-nav][id]"));
 
       // Build anchors in the same order the sections appear in the DOM
-      navRoot.innerHTML = sections
-        .map(sec => {
-          const label = sec.getAttribute("data-nav");
-          const id = sec.id;
-          return `<a href="#${id}">${label}</a>`;
-        })
-        .join("");
+      // Sections with data-nav-group="more" go into a "More" dropdown on desktop
+      // (shown inline in the mobile menu).
+      const link = sec => `<a href="#${sec.id}">${sec.getAttribute("data-nav")}</a>`;
+      const primary = sections.filter(s => s.dataset.navGroup !== "more");
+      const more = sections.filter(s => s.dataset.navGroup === "more");
+
+      navRoot.innerHTML =
+        primary.map(link).join("") +
+        (more.length
+          ? `<div class="nav-more">
+               <button class="nav-more-btn" type="button" aria-haspopup="true" aria-expanded="false">More <span aria-hidden="true">▾</span></button>
+               <div class="nav-more-menu">${more.map(link).join("")}</div>
+             </div>`
+          : "");
+
+      const moreBox = navRoot.querySelector(".nav-more");
+      if (moreBox) {
+        const btn = moreBox.querySelector(".nav-more-btn");
+        const setOpen = open => {
+          moreBox.classList.toggle("open", open);
+          btn.setAttribute("aria-expanded", String(open));
+        };
+        btn.addEventListener("click", e => {
+          e.stopPropagation();
+          setOpen(!moreBox.classList.contains("open"));
+        });
+        document.addEventListener("click", e => { if (!moreBox.contains(e.target)) setOpen(false); });
+        document.addEventListener("keydown", e => { if (e.key === "Escape") setOpen(false); });
+        moreBox.addEventListener("click", e => { if (e.target.closest("a")) setOpen(false); });
+      }
 
       // Keep "Submit" in header-actions, not in nav.
     })();
