@@ -4530,3 +4530,52 @@ iframe{
     gap: 3px;
   }
 }
+
+/* Balanced desktop header height (tighter rows) */
+@media (min-width: 981px){
+  .site-header .header-inner{
+    row-gap: 2px;
+    padding: 8px 0 4px;
+  }
+  .site-header .nav-links{
+    padding-top: 4px;
+  }
+  .site-header .nav-links a{
+    padding: 5px 8px;
+  }
+}
+
+/* Hero fit: match the actual desktop header height */
+@media (min-width: 981px){
+  :root{
+    --hero-header-offset: 126px;
+    --hero-header-offset-announcement: 182px;
+  }
+}
+
+/* Wide desktop: single-line header (brand | links | controls) */
+@media (min-width: 1280px){
+  .site-header .header-inner{
+    max-width: 1680px;
+    grid-template-columns: auto minmax(0, 1fr) auto;
+    grid-template-areas: "brand links extra";
+    column-gap: 14px;
+    row-gap: 0;
+    padding: 8px clamp(16px, 1.6vw, 32px);
+  }
+  .site-header .nav-links{
+    padding-top: 0;
+    border-top: 0;
+    justify-content: center;
+    gap: 0;
+  }
+  .site-header .nav-links a,
+  .site-header .nav-links a:nth-last-child(-n+4){
+    padding: 5px 6px;
+    font-size: .84rem;
+  }
+  :root{
+    --hero-header-offset: 92px;
+    --hero-header-offset-announcement: 147px;
+  }
+}

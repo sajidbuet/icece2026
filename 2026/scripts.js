@@ -369,9 +369,9 @@ spy();
   const announcementClose = document.getElementById("announcementClose");
   const announcementReopen = document.getElementById("announcementReopen");
 
-  const announcementVersion = "2026-general-v1";
+  const announcementVersion = "2026-student-project-competition-v1";
   const announcements = [
-    "The paper submission deadline is extended till September 15th (Final Extension).",
+    "Student Project Showcasing and Competition: submit your project proposal by 28 November, 2026. See the Project Competition section for details.",
   ];
 
   if (announcementBar && announcementText && announcementTrack && announcementClose && announcementReopen && announcements.length) {
