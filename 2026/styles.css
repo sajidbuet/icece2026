@@ -4460,3 +4460,73 @@ iframe{
     justify-content: flex-start;
   }
 }
+/* ==========================================
+   Desktop header: two tidy rows
+   Row 1: brand (left) + controls (right)
+   Row 2: all nav links on a single line
+   ========================================== */
+@media (min-width: 981px){
+  .site-header .header-inner{
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    grid-template-areas:
+      "brand extra"
+      "links links";
+    align-items: center;
+    column-gap: 16px;
+    row-gap: 6px;
+    padding: 10px 0 8px;
+  }
+
+  .site-header .nav,
+  .site-header .nav-panel{ display: contents; }
+
+  .site-header .brand{ grid-area: brand; }
+
+  .site-header .nav-extra{
+    grid-area: extra;
+    justify-self: end;
+    flex-wrap: nowrap;
+  }
+
+  .site-header .nav-links{
+    grid-area: links;
+    flex: none;
+    width: 100%;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    gap: 2px;
+    padding-top: 6px;
+    border-top: 1px solid var(--line);
+  }
+
+  .site-header .nav-links a{
+    padding: 6px 8px;
+    font-size: .9rem;
+    white-space: nowrap;
+  }
+
+  /* keep the last four links at the same size as the rest */
+  .site-header .nav-links a:nth-last-child(-n+4){
+    font-size: .9rem;
+    opacity: 1;
+  }
+}
+
+/* narrower desktops: let the links wrap instead of overflowing */
+@media (min-width: 981px) and (max-width: 1180px){
+  .site-header .nav-links{
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 4px;
+  }
+}
+
+/* Desktop brand: date directly below the ICECE 2026 title */
+@media (min-width: 981px){
+  .site-header .brand-title-row{
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 3px;
+  }
+}
