@@ -1,0 +1,12 @@
+# Files that must never be served as public website assets (Cloudflare Workers static assets).
+# Same syntax as .gitignore.
+.git
+.gitignore
+.wrangler
+.dev.vars*
+.env*
+node_modules
+wrangler.jsonc
+wrangler.toml
+gitcommit.BAT
+scripts/

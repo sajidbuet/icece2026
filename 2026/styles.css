@@ -4620,3 +4620,89 @@ iframe{
   .nav-more-menu{ display: contents !important; }
   .nav-more-btn{ display: none !important; }
 }
+
+/* [hidden] must win over component display rules (e.g. placeholder sponsor tiers) */
+.sponsor-tier-stack[hidden]{ display: none !important; }
+
+/* ==========================================
+   Full-screen header (DRAFT): single band
+   brand (left) | menu in 2 rows (middle) | controls (right)
+   --nav-cols is set by the nav builder script (ceil(items / 2)).
+   Below 1100px the stacked header above still applies.
+   ========================================== */
+@media (min-width: 1100px){
+  .site-header .header-inner{
+    grid-template-columns: auto minmax(0, 1fr) auto;
+    grid-template-areas: "brand links extra";
+    column-gap: 20px;
+    row-gap: 0;
+    padding: 8px 0;
+  }
+
+  .site-header .nav-links{
+    display: grid;
+    grid-template-columns: repeat(var(--nav-cols, 7), auto);
+    justify-content: space-between;
+    align-content: center;
+    gap: 2px 4px;
+    width: 100%;
+    padding-top: 0;
+    border-top: 0;
+  }
+
+  /* show every link: no "More" dropdown at full width */
+  .site-header .nav-more,
+  .site-header .nav-more-menu{ display: contents; }
+  .site-header .nav-more-btn{ display: none; }
+
+  .site-header .nav-links a,
+  .site-header .nav-links a:nth-last-child(-n+4){
+    padding: 5px 7px;
+    font-size: .9rem;
+    text-align: center;
+    justify-content: center;
+  }
+
+  /* controls: column 1 = small theme + announcement buttons stacked,
+     column 2 = two-line Submit / Camera-Ready button */
+  .site-header .nav-extra{
+    display: grid;
+    grid-auto-flow: column;
+    grid-template-rows: repeat(2, auto);
+    align-items: center;
+    justify-items: center;
+    gap: 4px 8px;
+  }
+  .site-header .nav-extra .mode-toggle,
+  .site-header .nav-extra .announcement-reopen{
+    grid-column: 1;
+    width: 28px;
+    height: 28px;
+    min-width: 0;
+    min-height: 0;
+    padding: 0;
+    font-size: .8rem;
+    line-height: 1;
+  }
+  .site-header .nav-extra .mode-icon,
+  .site-header .nav-extra .announcement-reopen-icon{ font-size: 13px; }
+  .site-header .nav-extra .announcement-reopen[hidden]{ display: none; }
+  .site-header .nav-extra .nav-submit{
+    grid-column: 2;
+    grid-row: 1 / span 2;
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0;
+    padding: 6px 14px;
+    line-height: 1.15;
+    white-space: nowrap;
+  }
+  .site-header .nav-submit-line{ display: block; }
+
+  :root{
+    --hero-header-offset: 96px;
+    --hero-header-offset-announcement: 151px;
+  }
+}

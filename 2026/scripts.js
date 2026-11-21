@@ -1,11 +1,16 @@
+// Storage can throw (blocked cookies / some private modes); never let it break the page.
+const safeStorage = {
+  get(key) { try { return window.localStorage.getItem(key); } catch (e) { return null; } },
+  set(key, value) { try { window.localStorage.setItem(key, value); } catch (e) { /* ignore */ } },
+  remove(key) { try { window.localStorage.removeItem(key); } catch (e) { /* ignore */ } },
+};
+
 (() => {
   const root = document.documentElement;
 
-
-
   // -------- Color mode toggle (light / dark) --------
   const modeBtn = document.querySelector("[data-mode-toggle]");
-  const storedMode = localStorage.getItem("mode");
+  const storedMode = safeStorage.get("mode");
 
   const applyMode = (mode) => {
     if (mode === "light" || mode === "dark") {
@@ -47,7 +52,7 @@
       }
 
       root.setAttribute("data-mode", next);
-      localStorage.setItem("mode", next);
+      safeStorage.set("mode", next);
       applyMode(next);
     });
   }  
@@ -414,7 +419,7 @@ spy();
       announcementReopen.setAttribute("aria-expanded", "true");
       renderAnnouncement();
       startRotation();
-      localStorage.removeItem(storageKey);
+      safeStorage.remove(storageKey);
     };
 
     const hideAnnouncement = () => {
@@ -422,10 +427,10 @@ spy();
       announcementReopen.hidden = false;
       announcementReopen.setAttribute("aria-expanded", "false");
       stopRotation();
-      localStorage.setItem(storageKey, "1");
+      safeStorage.set(storageKey, "1");
     };
 
-    if (localStorage.getItem(storageKey) === "1") {
+    if (safeStorage.get(storageKey) === "1") {
       hideAnnouncement();
     } else {
       showAnnouncement();
@@ -483,7 +488,18 @@ Email: ${email || "[Your email]"}`;
   let current = 0;
   let timer = null;
 
+  // Slides other than the first carry data-bg and are loaded on demand,
+  // so the first paint only downloads one hero image.
+  function loadSlide(slide) {
+    const src = slide && slide.dataset.bg;
+    if (!src) return;
+    slide.style.backgroundImage = `url('${src}')`;
+    delete slide.dataset.bg;
+  }
+
   function setActive(index) {
+    loadSlide(slides[index]);
+    loadSlide(slides[(index + 1) % slides.length]); // prefetch the next slide
     slides.forEach((slide, i) => {
       slide.classList.toggle("is-active", i === index);
       slide.setAttribute("aria-hidden", i === index ? "false" : "true");
@@ -493,7 +509,6 @@ Email: ${email || "[Your email]"}`;
     dots.forEach((dot, i) => {
       const active = i === index;
       dot.classList.toggle("is-active", active);
-      dot.setAttribute("aria-selected", active ? "true" : "false");
       dot.setAttribute("aria-current", active ? "true" : "false");
     });
 
@@ -529,7 +544,6 @@ Email: ${email || "[Your email]"}`;
     dot.type = "button";
     dot.className = "hero-dot" + (i === 0 ? " is-active" : "");
     dot.setAttribute("aria-label", `Go to slide ${i + 1}`);
-    dot.setAttribute("aria-selected", i === 0 ? "true" : "false");
     dot.setAttribute("aria-current", i === 0 ? "true" : "false");
 
     dot.addEventListener("click", function () {

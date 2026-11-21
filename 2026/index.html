@@ -1,14 +1,19 @@
 <!doctype html>
-<!-- test comment -->
-<!-- test comment - build check -->
 <html lang="en" data-theme="t1" data-mode="auto">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="description" content="ICECE 2026 — 14th International Conference on Electrical and Computer Engineering (BUET)." />
   <title>ICECE 2026 — 14th International Conference on Electrical and Computer Engineering</title>
+  <link rel="canonical" href="https://icece.org.bd/2026/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="ICECE 2026 — 14th International Conference on Electrical and Computer Engineering" />
+  <meta property="og:description" content="December 10–12, 2026 · BUET, Dhaka, Bangladesh." />
+  <meta property="og:url" content="https://icece.org.bd/2026/" />
+  <meta property="og:image" content="https://icece.org.bd/2026/assets/hero/hero.webp" />
+  <link rel="preload" as="image" href="assets/hero/hero.webp" fetchpriority="high" />
   <link rel="stylesheet" href="styles.css" />
-  <link rel="apple-touch-icon" sizes="57x57" href="assets/favicon/assets/favicon/apple-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="57x57" href="assets/favicon/apple-icon-57x57.png">
 <link rel="apple-touch-icon" sizes="60x60" href="assets/favicon/apple-icon-60x60.png">
 <link rel="apple-touch-icon" sizes="72x72" href="assets/favicon/apple-icon-72x72.png">
 <link rel="apple-touch-icon" sizes="76x76" href="assets/favicon/apple-icon-76x76.png">
@@ -23,7 +28,7 @@
 <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon/favicon-16x16.png">
 <link rel="manifest" href="assets/favicon/manifest.json">
 <meta name="msapplication-TileColor" content="#ffffff">
-<meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+<meta name="msapplication-TileImage" content="assets/favicon/ms-icon-144x144.png">
 <meta name="theme-color" content="#ffffff">
 </head>
 
@@ -81,7 +86,7 @@
             <span class="announcement-reopen-icon" aria-hidden="true">📣</span>
           </button>
 
-          <a class="btn btn-primary btn-compact nav-submit" href="#author-camera-ready">Submit Camera-Ready</a>
+          <a class="btn btn-primary btn-compact nav-submit" href="#author-camera-ready"><span class="nav-submit-line">Submit</span> <span class="nav-submit-line">Camera-Ready</span></a>
         </div>
       </div>
 
@@ -124,11 +129,11 @@
     <section class="hero" id="home" aria-label="Conference overview" data-hero-slider>
   <div class="hero-bg" aria-hidden="true">
     <div class="hero-slide is-active" style="background-image:url('assets/hero/hero.webp')"></div>
-    <div class="hero-slide" style="background-image:url('assets/hero/dhaka.webp')"></div>
+    <div class="hero-slide" data-bg="assets/hero/dhaka.webp"></div>
     
     <!-- <div class="hero-slide" style="background-image:url('assets/hero/lalbag-kella.webp')"></div> -->
-    <div class="hero-slide" style="background-image:url('assets/hero/shahid-minar.webp')"></div>
-    <div class="hero-slide" style="background-image:url('assets/hero/ECE.webp')"></div>
+    <div class="hero-slide" data-bg="assets/hero/shahid-minar.webp"></div>
+    <div class="hero-slide" data-bg="assets/hero/ECE.webp"></div>
   </div>
 
   <div class="hero-overlay" aria-hidden="true"></div>
@@ -834,6 +839,14 @@
                   <li>All fonts must be embedded</li>
                   <li>All submitted papers must be written in English</li>
                 </ul>
+                <p>
+                  <a
+                    class="btn btn-primary"
+                    href="https://cmt3.research.microsoft.com/ICECE2026"
+                    target="_blank"
+                    rel="noreferrer noopener"
+                  >Go to CMT Submission Site</a>
+                </p>
               </article>
 
               <article class="camera-step">
@@ -856,14 +869,22 @@
                   form must be uploaded during final camera-ready submission as an additional
                   document.
                 </p>
+                <p>
+                  <a
+                    class="btn btn-primary"
+                    href="https://cmt3.research.microsoft.com/ICECE2026"
+                    target="_blank"
+                    rel="noreferrer noopener"
+                  >Go to CMT Submission Site</a>
+                </p>
               </article>
 
               <article class="camera-step">
                 <span class="camera-step-no">Step 5</span>
                 <h4>Registration</h4>
                 <p>
-                  Complete conference registration and pay the registration fee before the deadline
-                  mentioned on the registration page.
+                  Complete conference <a href="#register">registration</a> and pay the registration
+                  fee before the <a href="#dates">registration deadline</a>.
                 </p>
               </article>
 
@@ -953,7 +974,7 @@
       <article class="card speaker-card reveal">
         <div class="speaker-card__top">
           <div class="speaker-card__badge">Keynote</div>
-          <img class="speaker-card__photo" src="assets/speakers/johndoe.jpg" alt="Keynote Speaker">
+          <img class="speaker-card__photo" loading="lazy" decoding="async" src="assets/speakers/johndoe.jpg" alt="Keynote Speaker">
         </div>
         <div class="speaker-card__body">
           <h3 class="speaker-card__name">Keynote Speaker</h3>
@@ -968,7 +989,7 @@
       <article class="card speaker-card reveal">
         <div class="speaker-card__top">
           <div class="speaker-card__badge">Keynote</div>
-          <img class="speaker-card__photo" src="assets/speakers/johndoe.jpg" alt="Keynote Speaker">
+          <img class="speaker-card__photo" loading="lazy" decoding="async" src="assets/speakers/johndoe.jpg" alt="Keynote Speaker">
         </div>
         <div class="speaker-card__body">
           <h3 class="speaker-card__name">Keynote Speaker</h3>
@@ -983,7 +1004,7 @@
       <article class="card speaker-card reveal">
         <div class="speaker-card__top">
           <div class="speaker-card__badge">Plenary</div>
-          <img class="speaker-card__photo" src="assets/speakers/johndoe.jpg" alt="Plenary Speaker">
+          <img class="speaker-card__photo" loading="lazy" decoding="async" src="assets/speakers/johndoe.jpg" alt="Plenary Speaker">
         </div>
         <div class="speaker-card__body">
           <h3 class="speaker-card__name">Plenary Speaker</h3>
@@ -1351,7 +1372,8 @@
       </p>
     </div>
 
-    <div class="sponsor-tier-stack">
+    <!-- Placeholder sponsor tiers hidden until real sponsors are confirmed (remove `hidden` to show) -->
+    <div class="sponsor-tier-stack" hidden>
 
       <!-- Platinum -->
       <section class="sponsor-tier sponsor-tier--platinum reveal" aria-labelledby="platinum-sponsors">
@@ -1363,28 +1385,28 @@
         <div class="sponsor-grid sponsor-grid--platinum" aria-label="Platinum sponsor logos">
           <a class="sponsor-card sponsor-card--xl" href="https://example.com" target="_blank" rel="noopener">
             <div class="sponsor-logo-wrap">
-              <img src="assets/sponsors/platinum.png" alt="Placeholder logo for Platinum Sponsor 1" />
+              <img loading="lazy" decoding="async" src="assets/sponsors/platinum.png" alt="Placeholder logo for Platinum Sponsor 1" />
             </div>
             <span class="sponsor-name">Platinum Sponsor 1</span>
           </a>
 
           <article class="sponsor-card sponsor-card--xl">
             <div class="sponsor-logo-wrap">
-              <img src="assets/sponsors/platinum.png" alt="Placeholder logo for Platinum Sponsor 2" />
+              <img loading="lazy" decoding="async" src="assets/sponsors/platinum.png" alt="Placeholder logo for Platinum Sponsor 2" />
             </div>
             <span class="sponsor-name">Platinum Sponsor 2</span>
           </article>
 
           <article class="sponsor-card sponsor-card--xl">
             <div class="sponsor-logo-wrap">
-              <img src="assets/sponsors/platinum.png" alt="Placeholder logo for Platinum Sponsor 3" />
+              <img loading="lazy" decoding="async" src="assets/sponsors/platinum.png" alt="Placeholder logo for Platinum Sponsor 3" />
             </div>
             <span class="sponsor-name">Platinum Sponsor 3</span>
           </article>
 
           <article class="sponsor-card sponsor-card--xl">
             <div class="sponsor-logo-wrap">
-              <img src="assets/sponsors/platinum.png" alt="Placeholder logo for Platinum Sponsor 4" />
+              <img loading="lazy" decoding="async" src="assets/sponsors/platinum.png" alt="Placeholder logo for Platinum Sponsor 4" />
             </div>
             <span class="sponsor-name">Platinum Sponsor 4</span>
           </article>
@@ -1401,28 +1423,28 @@
         <div class="sponsor-grid sponsor-grid--gold" aria-label="Gold sponsor logos">
           <a class="sponsor-card sponsor-card--xl" href="https://example.com" target="_blank" rel="noopener">
             <div class="sponsor-logo-wrap">
-              <img src="assets/sponsors/gold.png" alt="Placeholder logo for Gold Sponsor 1" />
+              <img loading="lazy" decoding="async" src="assets/sponsors/gold.png" alt="Placeholder logo for Gold Sponsor 1" />
             </div>
             <span class="sponsor-name">Gold Sponsor 1</span>
           </a>
 
           <article class="sponsor-card sponsor-card--xl">
             <div class="sponsor-logo-wrap">
-              <img src="assets/sponsors/gold.png" alt="Placeholder logo for Gold Sponsor 2" />
+              <img loading="lazy" decoding="async" src="assets/sponsors/gold.png" alt="Placeholder logo for Gold Sponsor 2" />
             </div>
             <span class="sponsor-name">Gold Sponsor 2</span>
           </article>
 
           <article class="sponsor-card sponsor-card--xl">
             <div class="sponsor-logo-wrap">
-              <img src="assets/sponsors/gold.png" alt="Placeholder logo for Gold Sponsor 3" />
+              <img loading="lazy" decoding="async" src="assets/sponsors/gold.png" alt="Placeholder logo for Gold Sponsor 3" />
             </div>
             <span class="sponsor-name">Gold Sponsor 3</span>
           </article>
 
           <article class="sponsor-card sponsor-card--xl">
             <div class="sponsor-logo-wrap">
-              <img src="assets/sponsors/gold.png" alt="Placeholder logo for Gold Sponsor 4" />
+              <img loading="lazy" decoding="async" src="assets/sponsors/gold.png" alt="Placeholder logo for Gold Sponsor 4" />
             </div>
             <span class="sponsor-name">Gold Sponsor 4</span>
           </article>
@@ -1439,42 +1461,42 @@
         <div class="sponsor-grid sponsor-grid--silver" aria-label="Silver sponsor logos">
           <article class="sponsor-card sponsor-card--lg">
             <div class="sponsor-logo-wrap">
-              <img src="assets/sponsors/silver.png" alt="Placeholder logo for Silver Sponsor 1" />
+              <img loading="lazy" decoding="async" src="assets/sponsors/silver.png" alt="Placeholder logo for Silver Sponsor 1" />
             </div>
             <span class="sponsor-name">Silver Sponsor 1</span>
           </article>
 
           <article class="sponsor-card sponsor-card--lg">
             <div class="sponsor-logo-wrap">
-              <img src="assets/sponsors/silver.png" alt="Placeholder logo for Silver Sponsor 2" />
+              <img loading="lazy" decoding="async" src="assets/sponsors/silver.png" alt="Placeholder logo for Silver Sponsor 2" />
             </div>
             <span class="sponsor-name">Silver Sponsor 2</span>
           </article>
 
           <article class="sponsor-card sponsor-card--lg">
             <div class="sponsor-logo-wrap">
-              <img src="assets/sponsors/silver.png" alt="Placeholder logo for Silver Sponsor 3" />
+              <img loading="lazy" decoding="async" src="assets/sponsors/silver.png" alt="Placeholder logo for Silver Sponsor 3" />
             </div>
             <span class="sponsor-name">Silver Sponsor 3</span>
           </article>
 
           <article class="sponsor-card sponsor-card--lg">
             <div class="sponsor-logo-wrap">
-              <img src="assets/sponsors/silver.png" alt="Placeholder logo for Silver Sponsor 4" />
+              <img loading="lazy" decoding="async" src="assets/sponsors/silver.png" alt="Placeholder logo for Silver Sponsor 4" />
             </div>
             <span class="sponsor-name">Silver Sponsor 4</span>
           </article>
 
           <article class="sponsor-card sponsor-card--lg">
             <div class="sponsor-logo-wrap">
-              <img src="assets/sponsors/silver.png" alt="Placeholder logo for Silver Sponsor 5" />
+              <img loading="lazy" decoding="async" src="assets/sponsors/silver.png" alt="Placeholder logo for Silver Sponsor 5" />
             </div>
             <span class="sponsor-name">Silver Sponsor 5</span>
           </article>
 
           <article class="sponsor-card sponsor-card--lg">
             <div class="sponsor-logo-wrap">
-              <img src="assets/sponsors/silver.png" alt="Placeholder logo for Silver Sponsor 6" />
+              <img loading="lazy" decoding="async" src="assets/sponsors/silver.png" alt="Placeholder logo for Silver Sponsor 6" />
             </div>
             <span class="sponsor-name">Silver Sponsor 6</span>
           </article>
@@ -1491,70 +1513,70 @@
         <div class="sponsor-grid sponsor-grid--bronze" aria-label="Bronze sponsor logos">
           <article class="sponsor-card sponsor-card--sm">
             <div class="sponsor-logo-wrap">
-              <img src="assets/sponsors/bronze.png" alt="Placeholder logo for Bronze Sponsor 1" />
+              <img loading="lazy" decoding="async" src="assets/sponsors/bronze.png" alt="Placeholder logo for Bronze Sponsor 1" />
             </div>
             <span class="sponsor-name">Bronze Sponsor 1</span>
           </article>
 
           <article class="sponsor-card sponsor-card--sm">
             <div class="sponsor-logo-wrap">
-              <img src="assets/sponsors/bronze.png" alt="Placeholder logo for Bronze Sponsor 2" />
+              <img loading="lazy" decoding="async" src="assets/sponsors/bronze.png" alt="Placeholder logo for Bronze Sponsor 2" />
             </div>
             <span class="sponsor-name">Bronze Sponsor 2</span>
           </article>
 
           <article class="sponsor-card sponsor-card--sm">
             <div class="sponsor-logo-wrap">
-              <img src="assets/sponsors/bronze.png" alt="Placeholder logo for Bronze Sponsor 3" />
+              <img loading="lazy" decoding="async" src="assets/sponsors/bronze.png" alt="Placeholder logo for Bronze Sponsor 3" />
             </div>
             <span class="sponsor-name">Bronze Sponsor 3</span>
           </article>
 
           <article class="sponsor-card sponsor-card--sm">
             <div class="sponsor-logo-wrap">
-              <img src="assets/sponsors/bronze.png" alt="Placeholder logo for Bronze Sponsor 4" />
+              <img loading="lazy" decoding="async" src="assets/sponsors/bronze.png" alt="Placeholder logo for Bronze Sponsor 4" />
             </div>
             <span class="sponsor-name">Bronze Sponsor 4</span>
           </article>
 
           <article class="sponsor-card sponsor-card--sm">
             <div class="sponsor-logo-wrap">
-              <img src="assets/sponsors/bronze.png" alt="Placeholder logo for Bronze Sponsor 5" />
+              <img loading="lazy" decoding="async" src="assets/sponsors/bronze.png" alt="Placeholder logo for Bronze Sponsor 5" />
             </div>
             <span class="sponsor-name">Bronze Sponsor 5</span>
           </article>
 
           <article class="sponsor-card sponsor-card--sm">
             <div class="sponsor-logo-wrap">
-              <img src="assets/sponsors/bronze.png" alt="Placeholder logo for Bronze Sponsor 6" />
+              <img loading="lazy" decoding="async" src="assets/sponsors/bronze.png" alt="Placeholder logo for Bronze Sponsor 6" />
             </div>
             <span class="sponsor-name">Bronze Sponsor 6</span>
           </article>
 
           <article class="sponsor-card sponsor-card--sm">
             <div class="sponsor-logo-wrap">
-              <img src="assets/sponsors/bronze.png" alt="Placeholder logo for Bronze Sponsor 7" />
+              <img loading="lazy" decoding="async" src="assets/sponsors/bronze.png" alt="Placeholder logo for Bronze Sponsor 7" />
             </div>
             <span class="sponsor-name">Bronze Sponsor 7</span>
           </article>
 
           <article class="sponsor-card sponsor-card--sm">
             <div class="sponsor-logo-wrap">
-              <img src="assets/sponsors/bronze.png" alt="Placeholder logo for Bronze Sponsor 8" />
+              <img loading="lazy" decoding="async" src="assets/sponsors/bronze.png" alt="Placeholder logo for Bronze Sponsor 8" />
             </div>
             <span class="sponsor-name">Bronze Sponsor 8</span>
           </article>
 
           <article class="sponsor-card sponsor-card--sm">
             <div class="sponsor-logo-wrap">
-              <img src="assets/sponsors/bronze.png" alt="Placeholder logo for Bronze Sponsor 9" />
+              <img loading="lazy" decoding="async" src="assets/sponsors/bronze.png" alt="Placeholder logo for Bronze Sponsor 9" />
             </div>
             <span class="sponsor-name">Bronze Sponsor 9</span>
           </article>
 
           <article class="sponsor-card sponsor-card--sm">
             <div class="sponsor-logo-wrap">
-              <img src="assets/sponsors/bronze.png" alt="Placeholder logo for Bronze Sponsor 10" />
+              <img loading="lazy" decoding="async" src="assets/sponsors/bronze.png" alt="Placeholder logo for Bronze Sponsor 10" />
             </div>
             <span class="sponsor-name">Bronze Sponsor 10</span>
           </article>
@@ -1888,6 +1910,9 @@
                <div class="nav-more-menu">${more.map(link).join("")}</div>
              </div>`
           : "");
+
+      // Full-screen header shows every link (no "More") in two rows: columns = ceil(links / 2)
+      navRoot.style.setProperty("--nav-cols", Math.ceil(navRoot.querySelectorAll("a").length / 2));
 
       const moreBox = navRoot.querySelector(".nav-more");
       if (moreBox) {
