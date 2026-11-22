@@ -4706,3 +4706,12 @@ iframe{
     --hero-header-offset-announcement: 151px;
   }
 }
+
+/* Registration guidelines */
+.registration-guidelines{ margin-top: 18px; }
+.registration-guidelines h3{ margin: 0 0 6px; }
+.registration-guidelines .bullets{ line-height: 1.7; }
+.registration-guidelines .bullets li{ margin: 10px 0; }
+.registration-links{ margin-top: 10px; }
+.registration-jump{ margin-left: 8px; vertical-align: middle; }
+#registration-guidelines{ scroll-margin-top: 90px; }
